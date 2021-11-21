@@ -26,13 +26,14 @@ body {
 #userName h1 {
     font-size: 2.0rem;
     font-weight: 600;
-    margin: 0 auto;
+    margin: 5px auto;
 }
 
 #userName p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 400;
     margin-top: 5px;
+    margin-bottom: 22px;
     text-transform: none;
 }
 
@@ -44,7 +45,7 @@ i.fa {
     max-width: 500px;
     width: auto;
     display: block;
-    margin: 20px auto;
+    margin: 5px auto;
 }
 
 .link {
