@@ -1,9 +1,3 @@
-### Notice of Unreachability
-- I am currently in FL, USA
-- Response time will be limited
-- Will not be doing any development work
-- Returning some time in January
-
 ### Hey there 👋
 - 🌱 I'm a highschool student and (occassional) freelancer
 - 🔭 Currently managing my [OmeglePy](https://github.com/isaackogan/OmeglePy) API and [Chromegle](https://github.com/isaackogan/Chromegle) Extension
