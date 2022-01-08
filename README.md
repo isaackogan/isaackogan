@@ -3,4 +3,3 @@
 - 🔭 Currently managing my [Chromegle](https://github.com/isaackogan/Chromegle) Extension
 - 📫 Email me at isaacikogan@gmail.com for any inquiries
 - ⚡ Connect with me on [LinkedIn](https://www.linkedin.com/in/isaackogan/). Going into Uni soon, any and all connections help.
-
