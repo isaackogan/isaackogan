@@ -21,19 +21,23 @@ const ContainedActivity = styled.div`
     font-weight: bold;
     content: 'Discord Presence';
   }
+  
 `;
 
 
 const ActivityParser = {
 
     parseSpotify(data) {
+        const artistNames = data["artist"].replaceAll(";", ",");
+
         return {
             "cover": data["album_art_url"] || "/logos/activity.svg",
             "title": "Listening to Spotify",
             "subtitle": data["song"] || "",
-            "text1": data["artist"] == null ? "" : "by " + data["artist"].replaceAll(";", ","),
-            "text2": data["album"] == null ? "" : "on " + data["album"]
-        }
+            "text1": data["artist"] == null ? "" : "by " + artistNames,
+            "text2": data["album"] == null ? "" : "on " + data["album"],
+            "url": `https://open.spotify.com/search/${encodeURIComponent(data["song"]) + " " + artistNames}`
+    }
 
     },
 
@@ -95,7 +99,15 @@ class ActivityContainer extends Component {
     }
 
     createActivity (data, i) {
-        return <ActivityItem key={i} cover={data["cover"]} title={data["title"]} subtitle={data["subtitle"]} text1={data["text1"]} text2={data["text2"]} />;
+        return <ActivityItem
+            key={i}
+            cover={data["cover"]}
+            title={data["title"]}
+            subtitle={data["subtitle"]}
+            text1={data["text1"]}
+            text2={data["text2"]}
+            url={data["url"]}
+        />;
     }
 
     createActivities (dataList) {

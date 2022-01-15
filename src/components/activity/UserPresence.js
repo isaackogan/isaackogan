@@ -33,6 +33,13 @@ const ImageContainer = styled.div`
 const TagContainer = styled.span`
   font-size: 20px;
   font-weight: bold;
+  cursor: pointer;
+  transition: opacity 100ms;
+  
+  &:active {
+    opacity: 0.5;
+  }
+  
 `;
 
 const Tag = styled.span`
@@ -61,7 +68,7 @@ const StatusDot = styled.span`
   float: right;
   display: inline-block;
   margin-top: -30px;
-  
+  background-color: #747f8d;
   outline: 6px solid rgb(62.73,76.959,90.27);
 `;
 
@@ -124,8 +131,12 @@ class UserPresence extends Component {
         }
 
         return (
-            <CustomStatusText>{data["customActivity"]}</CustomStatusText>
+            <CustomStatusText className="no-select" >{data["customActivity"]}</CustomStatusText>
         );
+    }
+
+    onClick() {
+
     }
 
     render() {
@@ -133,13 +144,17 @@ class UserPresence extends Component {
         const data = this.parseData()
 
         return (
-            <ButtonItem className="no-select" href={this.props.href}>
+            <ButtonItem href={this.props.href} className="no-select">
                 <ItemContainer>
                     <ImageContainer>
-                        <ProfileImage src={data["cover"]}/>
+                        <ProfileImage src={data["cover"]} className="no-select"/>
                         <Status state={data["status"]}/>
                     </ImageContainer>
-                    <TagContainer>
+                    <TagContainer title="Copy Username" onClick={() => {
+
+                        navigator.clipboard.writeText(`${data["tag"]}#${data["discriminator"]}`).then(null)}
+
+                    }>
                         <Tag>{data["tag"]}</Tag><Discriminator>#{data["discriminator"]}</Discriminator>
                     </TagContainer>
                     {this.getActivity(data)}

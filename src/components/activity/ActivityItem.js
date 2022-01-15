@@ -6,7 +6,6 @@ const ButtonItem = styled.a`
   background-color: rgb(62.73, 76.959, 90.27);
   border-radius: 0.25rem;
   padding: 1.0rem 1.0rem 0.9rem;
-  cursor: inherit;
   margin-top: 15px;
   color: inherit;
 
@@ -16,6 +15,7 @@ const ButtonItem = styled.a`
 
   display: flex;
   align-items: center;
+
 
 `;
 
@@ -58,8 +58,12 @@ class ActivityItem extends Component {
     // TODO scale text size based on browser width
 
     render() {
+
+        const classList = ["no-select"]
+        if (this.props.url != null) classList.push("linkedActivity")
+
         return (
-            <ButtonItem className="no-select" href={this.props.href}>
+            <ButtonItem className={classList} href={this.props.url} target="_blank">
                 <ItemContainer>
                     <TitleContainer>{this.props.title.toUpperCase()}</TitleContainer>
                     <BodyContainer>

@@ -15,14 +15,25 @@ class Home extends Component {
         this.state = { data: [] };
     }
 
-    componentDidMount() {
+    updateData() {
         fetch(`https://api.lanyard.rest/v1/users/699802828356583435`, {
             headers: {
                 'Access-Control-Allow-Origin':'*'
             }
         })
             .then(res => res.json())
-            .then(json =>this.setState({ data: json }));
+            .then(json => this.setState({ data: json }));
+    }
+
+    updateInfinite() {
+        this.updateData()
+        setTimeout(() => {
+            this.updateInfinite();
+        }, 10 * 1000);
+    }
+
+    componentDidMount() {
+        this.updateInfinite()
     }
 
     render() {

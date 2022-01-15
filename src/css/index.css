@@ -61,3 +61,11 @@
 }
 
 
+.linkedActivity:hover {
+         outline-color: rgb(105, 122, 144);
+         transition: outline-color 200ms;
+}
+
+.linkedActivity {
+    cursor: pointer;
+}
