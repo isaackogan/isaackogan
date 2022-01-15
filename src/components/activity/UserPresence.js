@@ -64,12 +64,13 @@ const StatusDot = styled.span`
   position: relative;
   width: 25px;
   height: 25px;
-  border-radius: 50%;
+  border-radius: 500px;
   float: right;
   display: inline-block;
-  margin-top: -30px;
+  margin-top: -40px;
+  margin-right: -10px;
   background-color: #747f8d;
-  outline: 6px solid rgb(62.73,76.959,90.27);
+  border: 6px solid rgb(62.73,76.959,90.27);
 `;
 
 class Status extends Component {

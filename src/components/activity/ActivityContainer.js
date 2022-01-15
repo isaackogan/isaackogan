@@ -30,13 +30,19 @@ const ActivityParser = {
     parseSpotify(data) {
         const artistNames = data["artist"].replaceAll(";", ",");
 
+        const searchURL = (
+            window.innerWidth < 720 ?
+                "https://www.google.com/search?q=" + encodeURIComponent(data["song"] + " " + artistNames + " on Spotify") :
+                "https://open.spotify.com/search/" + encodeURIComponent(data["song"] + " " + artistNames)
+        );
+
         return {
             "cover": data["album_art_url"] || "/logos/activity.svg",
             "title": "Listening to Spotify",
             "subtitle": data["song"] || "",
             "text1": data["artist"] == null ? "" : "by " + artistNames,
             "text2": data["album"] == null ? "" : "on " + data["album"],
-            "url": `https://open.spotify.com/search/${encodeURIComponent(data["song"]) + " " + artistNames}`
+            "url": searchURL
     }
 
     },
