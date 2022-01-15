@@ -18,6 +18,7 @@ const ContainedRedirect = styled.div`
   &:before {
     font-size: 30px;
     font-weight: bold;
+    content: 'Social Links';
   }
 `;
 
@@ -26,12 +27,12 @@ class SocialRedirects extends Component {
     render() {
 
         return (
-            <ContainedRedirect className={`defaultGrey ${this.props.className}`}>
-                <RedirectButton name="LinkedIn" href="/linkedin" logo="/logos/linkedin.svg"/>
-                <RedirectButton name="Instagram" href="/instagram" logo="/logos/instagram.svg"/>
+            <ContainedRedirect className={`defaultGrey`}>
                 <RedirectButton name="GitHub" href="/github" logo="/logos/github.svg"/>
-                <RedirectButton name="Snapchat" href="/snapchat" logo="/logos/snapchat.svg"/>
                 <RedirectButton name="Spotify" href="/spotify" logo="/logos/spotify.svg"/>
+                <RedirectButton name="Instagram" href="/instagram" logo="/logos/instagram.svg"/>
+                <RedirectButton name="Snapchat" href="/snapchat" logo="/logos/snapchat.svg"/>
+                <RedirectButton name="LinkedIn" href="/linkedin" logo="/logos/linkedin.svg"/>
             </ContainedRedirect>
         )
     }

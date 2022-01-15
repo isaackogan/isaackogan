@@ -18,6 +18,8 @@ const ContainedRedirect = styled.div`
   &:before {
     font-size: 30px;
     font-weight: bold;
+    content: 'Project Links';
+
   }
 `;
 
@@ -26,7 +28,7 @@ class ProjectRedirects extends Component {
     render() {
 
         return (
-            <ContainedRedirect className={`defaultGrey ${this.props.className}`}>
+            <ContainedRedirect className={`defaultGrey`}>
                 <RedirectButton name="Chromegle" href="/chromegle" logo="/logos/chromegle.svg"/>
                 <RedirectButton name="8 Ball Magic" href="/eightball" logo="/logos/eightball.svg"/>
                 <RedirectButton name="Mineplex Status" href="/mpstatus" logo="/logos/mpstatus.svg"/>
