@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg fill="#faa81a" viewBox="328.442 215.898 134.798 134.909" xmlns="http://www.w3.org/2000/svg">
+    <mask id="13f0f5ef-7beb-4c84-8323-0532f4008154">
+        <rect x="330.1" y="217.233" width="131.467" height="131.467" rx="500" ry="500" fill="white"/>
+        <rect x="313.667" y="200.8" width="98.6" height="98.6" rx="500" ry="500" fill="black"/>
+        <polygon points="-2.16506,-2.5 2.16506,0 -2.16506,2.5" fill="black" transform="matrix(0, 0, 0, 0, 231.5, 151.5)" style="transform-origin: 13.125px 10px;"/>
+        <circle fill="black" cx="12.5" cy="10" r="0"/>
+    </mask>
+    <rect fill="hsl(38, calc(var(--saturation-factor, 1) * 95.7%), 54.1%)" width="328.667" height="197.2" mask="url(#13f0f5ef-7beb-4c84-8323-0532f4008154)" style="" x="231.5" y="151.5"/>
+</svg>

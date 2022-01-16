@@ -18,12 +18,13 @@ const Title = styled.a`
   font-size: 40px;
   font-family: 'iCiel Gotham', sans-serif;
   transition: color 300ms;
-  cursor: default;
+  cursor: pointer;
   text-decoration: none;
   padding: 15px;
+  color: #f5f5f5;
 
   &:hover {
-    color: #f5f5f5;
+    color: #d5d5d5;
     transition: color 300ms;
   }
 
@@ -33,7 +34,7 @@ function Header() {
 
     return (
         <HeaderBar>
-            <Title className="no-select defaultGrey">Isaac Kogan</Title>
+            <Title href="/" className="no-select">Isaac Kogan</Title>
         </HeaderBar>
     )
 }

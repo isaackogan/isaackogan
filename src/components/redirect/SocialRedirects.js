@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import RedirectButton from "./RedirectButton";
 import styled from 'styled-components';
+import CopyButton from "./CopyButton";
 
 const ContainedRedirect = styled.div`
   max-width: 1100px;
@@ -28,6 +29,7 @@ class SocialRedirects extends Component {
 
         return (
             <ContainedRedirect className={`defaultGrey`}>
+                <CopyButton name="E-Mail Address (Copy)" copyText="isaacikogan@gmail.com" logo="/logos/email.svg"/>
                 <RedirectButton name="GitHub" href="/github" logo="/logos/github.svg"/>
                 <RedirectButton name="Spotify" href="/spotify" logo="/logos/spotify.svg"/>
                 <RedirectButton name="Instagram" href="/instagram" logo="/logos/instagram.svg"/>

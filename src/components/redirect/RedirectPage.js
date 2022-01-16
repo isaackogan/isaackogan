@@ -66,7 +66,7 @@ class RedirectPage extends Component {
             <RedirectContainer>
                 <LoadRing />
                 <RedirectItem>
-                    <h3 className="defaultGrey">Redirecting you to <span className="linkBlue">{this.props.href}</span></h3>
+                    <h3 className="defaultGrey">Redirecting you to <a className="redirectLink" href={this.props.href}>{this.props.href}</a></h3>
                 </RedirectItem>
             </RedirectContainer>
 

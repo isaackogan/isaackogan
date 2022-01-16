@@ -59,34 +59,21 @@ const ProfileImage = styled.img`
   background-color: black;
 `;
 
-const StatusDot = styled.span`
-  margin-top: -55px;
-  position: relative;
-  width: 25px;
-  height: 25px;
-  border-radius: 500px;
-  float: right;
-  display: inline-block;
-  margin-top: -40px;
-  margin-right: -10px;
-  background-color: #747f8d;
-  border: 6px solid rgb(62.73,76.959,90.27);
-`;
 
 class Status extends Component {
 
     static #states = {
-        "online": "#3ba55d",
-        "idle": "#faa81a",
-        "dnd": "#ed4245",
-        "offline": "#747f8d"
+        "online": "/discord/status/online.svg",
+        "idle": "/discord/status/idle.svg",
+        "dnd": "/discord/status/dnd.svg",
+        "offline": "/discord/status/offline.svg",
+        "streaming": "/discord/status/streaming.svg"
     }
 
     render() {
 
         return (
-            <StatusDot style={{"backgroundColor": Status.#states[this.props.state || 0] || "lightgrey"}} />
-
+            <img alt="" className="statusDot no-select" src={Status.#states[this.props.state || 0] || "online"} />
         )
     }
 
@@ -99,15 +86,23 @@ const CustomStatusText = styled.span`
 class UserPresence extends Component {
 
     parseData() {
+        if (this.props.data.data == null) return null;
+
         const discordUser = this.props.data.data["discord_user"]
-        if (discordUser == null) return {}
+        if (discordUser == null) return null
 
         const activities = this.props.data.data["activities"]
         let customActivity = null;
 
+        let status = this.props.data.data["discord_status"];
+
         if (activities != null) {
             for (let activity in activities) {
+
                 if (activities.hasOwnProperty(activity)) {
+                    if (activities[activity]["type"] === 1) {
+                        status = "streaming";
+                    }
                     if (activities[activity]["type"] === 4) {
                         customActivity = activities[activity]["state"]
                     }
@@ -119,7 +114,7 @@ class UserPresence extends Component {
             "cover": `https://cdn.discordapp.com/avatars/${discordUser["id"]}/${discordUser["avatar"]}.webp?size=128`,
             "tag": discordUser["username"] || "Unknown",
             "discriminator": discordUser["discriminator"] || "0000",
-            "status": this.props.data.data["discord_status"],
+            "status": status,
             "customActivity": customActivity
         }
 
@@ -142,7 +137,10 @@ class UserPresence extends Component {
 
     render() {
         if (this.props.data == null || this.props.data.length < 1) return <div />
-        const data = this.parseData()
+        const data = this.parseData();
+
+        // noinspection JSIncompatibleTypesComparison
+        if (data === null) return <div />
 
         return (
             <ButtonItem href={this.props.href} className="no-select">

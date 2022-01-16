@@ -50,12 +50,90 @@ const BodyTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 `;
 
+const ProgressBar = styled.div`
+  margin-top: 10px;
+  width: 100%;
+  background-color: #5e5e5e;
+  border-radius: 500px;
+`
+
+const FillBar = styled.div`
+  width: 1%;
+  height: 5px;
+  background-color: #ffffff;
+  transition: width 1000ms;
+  border-radius: 500px;
+`
+
+const TimeContainer = styled.div`
+  width: 100%;
+  max-width: 450px;
+`
+
+const TimeData = styled.span`
+  font-size: 13px;
+  margin-top: 5px;
+`
 class ActivityItem extends Component {
 
-    // TODO cap subtitle, text1, text2 to ~50 chars with ellipses for overflow
-    // TODO scale text size based on browser width
+    constructor(props) {
+        super(props);
+        this.state = {
+            time: Date.now()
+        };
+    }
+
+    static secondsToTimestamp(seconds) {
+        let str = new Date(seconds).toISOString().substr(14, 5);
+
+        if (str.startsWith("0")) {
+            str = str.replace("0", "");
+        }
+
+        return str;
+
+    }
+
+    componentDidMount() {
+        this.interval = setInterval(() => this.setState({ time: Date.now() }), 1000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+
+    getProgressBar() {
+        if (this.props.progress == null || !(this.props.progress["end"] && this.props.progress["start"])) return <div/>;
+
+        const songLength = (this.props.progress["end"] - this.props.progress["start"]);
+        const timePassed = Math.min((this.state.time - this.props.progress["start"]), songLength);
+        const percentCompleted = timePassed / songLength;
+
+        return (
+            <TimeContainer>
+                <ProgressBar>
+                    <FillBar style={{"width": (Math.min(percentCompleted * 100, 100)) + "%"}}/>
+                </ProgressBar>
+                <div>
+                    <TimeData style={{"float": "left"}}>{ActivityItem.secondsToTimestamp(timePassed)}</TimeData>
+                    <TimeData style={{"float": "right"}}>{ActivityItem.secondsToTimestamp(songLength)}</TimeData>
+                </div>
+            </TimeContainer>
+        )
+
+    }
+
+    getTimeElapsed() {
+        if (this.props.progress == null || !this.props.progress["start"] || this.props.progress["end"]) return <div />
+        const timePassed = Math.max((this.state.time - this.props.progress["start"]), 0);
+
+        return (
+            <span>{ActivityItem.secondsToTimestamp(timePassed)} Elapsed</span>
+        )
+    }
 
     render() {
 
@@ -72,6 +150,8 @@ class ActivityItem extends Component {
                             <span style={{"fontWeight": "bold"}}>{this.props.subtitle}</span>
                             <span>{this.props.text1}</span>
                             <span>{this.props.text2}</span>
+                            {this.getProgressBar()}
+                            {this.getTimeElapsed()}
                         </BodyTextContainer>
                     </BodyContainer>
                 </ItemContainer>

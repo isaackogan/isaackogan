@@ -12,15 +12,21 @@ const ButtonItem = styled.a`
   
   text-decoration: none;
   outline: 0.5px solid transparent;
-  transition: outline-color 200ms;
+  transition: opacity, outline-color 100ms;
 
   display: flex;
   align-items: center;
   
   &:hover {
     outline-color: rgb(105, 122, 144);
-    transition: outline-color 200ms;
+    transition: outline-color 100ms;
   }
+  
+  &:active {
+    transition: opacity 100ms;
+    opacity: 0.5;
+  }
+
 `;
 
 const ButtonTitle = styled.span`
@@ -38,14 +44,14 @@ const ButtonIcon = styled.div`
 
 `;
 
-function RedirectButton({name = "Button", href = "#", logo=""}) {
+function CopyButton({name = "Button", copyText = "", logo=""}) {
     return (
-        <ButtonItem className="no-select" href={href} title="Click to Copy">
+        <ButtonItem className="no-select" onClick={() => navigator.clipboard.writeText(copyText).then(null)} title="Click to Copy">
             <ButtonIcon><img alt="Logo" width="25" height="25" src={logo}/></ButtonIcon>
             <ButtonTitle>{name}</ButtonTitle>
         </ButtonItem>
     )
 }
 
-export default RedirectButton;
+export default CopyButton;
 

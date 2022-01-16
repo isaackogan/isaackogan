@@ -14,9 +14,47 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
+    <style>
+      .noScript {
+        text-align: center;
+        margin: auto;
+        color: #d5d5d5;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+        display: flex;
+        width: 99vw;
+        max-width: 90%;
+        height: 99vh;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        justify-items: center;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        user-drag: none;
+        -webkit-user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+      }
+      .enableJS {
+        transition: opacity 100ms;
+      }
+      .enableJS:hover {
+        opacity: 0.8;
+        transition: opacity 100ms;
+      }
+    </style>
+
   </head>
   <body style="margin: 0; min-height: 100vh; background-color: rgb(51, 64.175, 76.5)">
-    <noscript>You need to enable JavaScript to run this website.</noscript>
+    <noscript><div class="noScript no-select"><span class="enableJS">You need to enable JavaScript to run this website.</span></div></noscript>
     <div id="root"></div>
   <footer style="margin-top: 65px;"></footer>
   </body>

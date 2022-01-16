@@ -40,9 +40,9 @@ class Home extends Component {
 
         return (
             <div>
-                <ActivityContainer className="socialRedirects" rawdata={this.state.data} data={ActivityContainer.parse(this.state.data)}/>
-                <SocialRedirects className="socialRedirects"/>
-                <ProjectRedirects className="projectRedirects"/>
+                <ActivityContainer rawdata={this.state.data} data={ActivityContainer.parse(this.state.data)}/>
+                <SocialRedirects />
+                <ProjectRedirects />
             </div>
         )
     }
