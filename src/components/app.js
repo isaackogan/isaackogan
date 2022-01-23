@@ -63,6 +63,7 @@ const Main = () => {
             <Route exact path='/chromegle' element={<RedirectPage href={"https://chrome.google.com/webstore/detail/chromegle-omegle-ip-pulle/gcbbaikjfjmidabapdnebofcmconhdbn/"} />} />
             <Route exact path='/mpstatus' element={<RedirectPage href={"https://status.mineplex.club/"} />} />
             <Route exact path='/filehosting' element={<RedirectPage href={"https://cdn.isaackogan.com/"} />} />
+            <Route exact path='/panel' element={<RedirectPage href={"https://panel.isaackogan.com/"} />} />
 
         </Routes>
     );
