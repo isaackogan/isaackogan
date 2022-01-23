@@ -32,6 +32,7 @@ class ProjectRedirects extends Component {
                 <RedirectButton name="Chromegle" href="/chromegle" logo="/logos/chromegle.svg"/>
                 <RedirectButton name="8 Ball Magic" href="/eightball" logo="/logos/eightball.svg"/>
                 <RedirectButton name="Mineplex Status" href="/mpstatus" logo="/logos/mpstatus.svg"/>
+                <RedirectButton name="File Hosting" href="/filehosting" logo="/logos/filehosting.svg"/>
             </ContainedRedirect>
         )
 

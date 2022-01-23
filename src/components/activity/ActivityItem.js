@@ -145,7 +145,7 @@ class ActivityItem extends Component {
                 <ItemContainer>
                     <TitleContainer>{this.props.title.toUpperCase()}</TitleContainer>
                     <BodyContainer>
-                        <CoverImage src={this.props.cover} className="no-select"/>
+                        <CoverImage src={this.props.cover || "/discord/activities/notfound.svg"} className="no-select"/>
                         <BodyTextContainer>
                             <span style={{"fontWeight": "bold"}}>{this.props.subtitle}</span>
                             <span>{this.props.text1}</span>

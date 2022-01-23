@@ -31,7 +31,7 @@ const ActivityParser = {
         const artistNames = data["artist"].replaceAll(";", ",");
 
         return {
-            "cover": data["album_art_url"] || "/logos/activity.svg",
+            "cover": data["album_art_url"] || null,
             "title": "Listening to Spotify",
             "subtitle": data["song"] || "",
             "text1": data["artist"] == null ? "" : "by " + artistNames,
@@ -60,7 +60,7 @@ const ActivityParser = {
     },
 
     parseStream(activityData) {
-        let cover = "/logos/activity.svg";
+        let cover = null;
         const twitchName = activityData["assets"]["large_image"].split(":")
 
         if (twitchName[0] === "twitch") {
@@ -79,7 +79,7 @@ const ActivityParser = {
     parseImage(appId, assets) {
 
         if (assets == null || (assets["large_image"] == null && assets["small_image"] == null) || appId == null) {
-            return "/logos/activity.svg";
+            return null;
         }
 
         return `https://cdn.discordapp.com/app-assets/${appId}/${assets["large_image"] || assets["small_image"]}.png`;
@@ -108,7 +108,6 @@ class ActivityContainer extends Component {
         if (!data.success) return [];
         const rawData = data.data;
         const items = []
-
 
         if (rawData["spotify"] != null) {
             items.push(ActivityParser.parseSpotify(rawData["spotify"]))

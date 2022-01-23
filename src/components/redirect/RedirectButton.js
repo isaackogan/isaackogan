@@ -21,6 +21,7 @@ const ButtonItem = styled.a`
     outline-color: rgb(105, 122, 144);
     transition: outline-color 200ms;
   }
+    
 `;
 
 const ButtonTitle = styled.span`
@@ -41,7 +42,7 @@ const ButtonIcon = styled.div`
 function RedirectButton({name = "Button", href = "#", logo=""}) {
     return (
         <ButtonItem className="no-select" href={href} title="Click to Copy">
-            <ButtonIcon><img alt="Logo" width="25" height="25" src={logo}/></ButtonIcon>
+            <ButtonIcon><img alt="" width="25" height="25" src={logo}/></ButtonIcon>
             <ButtonTitle>{name}</ButtonTitle>
         </ButtonItem>
     )
