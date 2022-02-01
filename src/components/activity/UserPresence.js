@@ -111,7 +111,7 @@ class UserPresence extends Component {
         }
 
         return {
-            "cover": `https://cdn.discordapp.com/avatars/${discordUser["id"]}/${discordUser["avatar"]}.webp?size=128`,
+            "cover": `https://cdn.discordapp.com/avatars/${discordUser["id"]}/${discordUser["avatar"]}.png?size=128`,
             "tag": discordUser["username"] || "Unknown",
             "discriminator": discordUser["discriminator"] || "0000",
             "status": status,

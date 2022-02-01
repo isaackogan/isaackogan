@@ -64,7 +64,6 @@ const Main = () => {
             <Route exact path='/mpstatus' element={<RedirectPage href={"https://status.mineplex.club/"} />} />
             <Route exact path='/filehosting' element={<RedirectPage href={"https://cdn.isaackogan.com/"} />} />
             <Route exact path='/panel' element={<RedirectPage href={"https://panel.isaackogan.com/"} />} />
-
         </Routes>
     );
 }
