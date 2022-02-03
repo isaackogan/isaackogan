@@ -64,6 +64,7 @@ const Main = () => {
             <Route exact path='/mpstatus' element={<RedirectPage href={"https://status.mineplex.club/"} />} />
             <Route exact path='/filehosting' element={<RedirectPage href={"https://cdn.isaackogan.com/"} />} />
             <Route exact path='/panel' element={<RedirectPage href={"https://panel.isaackogan.com/"} />} />
+            <Route exact path='/tiktok' element={<RedirectPage href={"https://www.tiktok.com/@MS4wLjABAAAA8reuNQWczHjPgKB6LBEAcxgcDB4B5lE3mzrufe1fksc73eMORY-D-uyJGnqNK_Zg"} />} />
         </Routes>
     );
 }

@@ -115,7 +115,7 @@ class ActivityContainer extends Component {
 
         for (let activity of rawData["activities"] || []) {
 
-            if (!activity.id.includes("spotify")) {
+            if (!activity.id.includes("spotify") && activity["type"] !== 4) {
                 items.push(ActivityParser.parseActivity(activity));
             }
         }

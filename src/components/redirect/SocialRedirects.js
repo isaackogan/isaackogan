@@ -34,6 +34,7 @@ class SocialRedirects extends Component {
                 <RedirectButton name="Spotify" href="/spotify" logo="/logos/spotify.svg"/>
                 <RedirectButton name="Instagram" href="/instagram" logo="/logos/instagram.svg"/>
                 <RedirectButton name="Snapchat" href="/snapchat" logo="/logos/snapchat.svg"/>
+                <RedirectButton name="TikTok" href="/tiktok" logo="/logos/tiktok.svg"/>
                 <RedirectButton name="LinkedIn" href="/linkedin" logo="/logos/linkedin.svg"/>
             </ContainedRedirect>
         )
