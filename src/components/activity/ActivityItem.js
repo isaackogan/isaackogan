@@ -77,6 +77,15 @@ const TimeData = styled.span`
   font-size: 13px;
   margin-top: 5px;
 `
+
+const LoadingCoverImage = styled.div`
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: inline-block;
+`;
+
 class ActivityItem extends Component {
 
     constructor(props) {
@@ -136,6 +145,22 @@ class ActivityItem extends Component {
     }
 
     render() {
+
+        // Load dummy version
+        if (this.props.null || !this.props) {
+            return (
+                <ButtonItem>
+                    <ItemContainer style={{"animation": "500ms ease-out 0s 1 fadein"}}>
+                        <TitleContainer style={{"backgroundColor": "rgb(68.73,82.959,95.27)", "color": "rgb(68.73,82.959,95.27)", "width": "150px", "borderRadius": "50px"}}>
+                            Loading Data...
+                        </TitleContainer>
+                        <BodyContainer>
+                            <LoadingCoverImage style={{"backgroundColor": "rgb(70.73,82.959,94.27)"}} className="no-select"/>
+                        </BodyContainer>
+                    </ItemContainer>
+                </ButtonItem>
+            )
+        }
 
         const classList = ["no-select"]
         if (this.props.url != null) classList.push("linkedActivity")

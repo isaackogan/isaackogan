@@ -124,34 +124,36 @@ class ActivityContainer extends Component {
     }
 
     createActivity (data, i) {
+        if (data == null) {
+            return <ActivityItem key={i} null="true" />
+        }
+
         return <ActivityItem
             key={i}
-            cover={data["cover"]}
-            title={data["title"]}
-            subtitle={data["subtitle"]}
-            text1={data["text1"]}
-            text2={data["text2"]}
-            url={data["url"]}
+            cover={data["cover"] || ""}
+            title={data["title"] || ""}
+            subtitle={data["subtitle"] || ""}
+            text1={data["text1"] || ""}
+            text2={data["text2"] || ""}
+            url={data["url"] || ""}
             progress={data["progress"]}
         />;
     }
 
     createActivities (dataList) {
-        if (dataList == null) {
-            return <div />;
-        }
-
+        dataList = dataList || [];
         return dataList.map(this.createActivity);
     }
 
     render() {
-        try {
-            if (this.props.rawdata == null || this.props.rawdata.length < 1 || !this.props.rawdata["success"]) return <div />
+        const rawdata = this.props.rawdata;
+        const data = rawdata.length === 0 ? null : this.props.data;
 
+        try {
             return (
                 <ContainedActivity className={`defaultGrey ${this.props.className}`}>
-                    <UserPresence data={this.props.rawdata} />
-                    {this.createActivities(this.props.data)}
+                    <UserPresence data={rawdata} />
+                    {this.createActivities(data)}
                 </ContainedActivity>
             )
         } catch (e) {

@@ -59,6 +59,27 @@ const ProfileImage = styled.img`
   background-color: black;
 `;
 
+const LoadingTag = styled.span`
+  font-size: 20px;
+  font-weight: bold;
+  transition: opacity 100ms;
+  border-radius: 25px;
+  background-color: rgb(68.73,82.959,95.27);
+  color: rgb(68.73,82.959,95.27);
+  animation: 500ms ease-out 0s 1 fadein;
+`
+
+const LoadingImage = styled.div`
+  width: 100px;
+  height: 100px;  
+  object-fit: cover;
+  border-radius: 50px;
+  z-index: 0;
+  background-color: black;
+  background-color: rgb(68.73,82.959,95.27);
+  animation: 500ms ease-out 0s 1 fadein;
+`;
+
 
 class Status extends Component {
 
@@ -73,7 +94,7 @@ class Status extends Component {
     render() {
 
         return (
-            <img alt="" className="statusDot no-select" src={Status.#states[this.props.state || 0] || "online"} />
+            <img alt="" className="statusDot no-select" src={Status.#states[this.props.state || 0] || "offline"} />
         )
     }
 
@@ -131,31 +152,43 @@ class UserPresence extends Component {
         );
     }
 
-    onClick() {
+    getProfileImage(data) {
+        if (!data || !data["tag"]) {
+            return <ImageContainer><LoadingImage /></ImageContainer>
+        }
+        return (
+            <ImageContainer>
+                <ProfileImage src={data["cover"]} className="no-select"/>
+                <Status state={data["status"]}/>
+            </ImageContainer>
+        )
+    }
+
+    getTag(data) {
+        if (!data || !data["tag"]) {
+            return (
+                <LoadingTag title="Loading User...">Loading Data...</LoadingTag>
+            )
+        }
+
+        return (
+            <TagContainer title="Copy Username" onClick={() => {
+                navigator.clipboard.writeText(`${data["tag"]}#${data["discriminator"]}`).then(null)}
+            }>
+                <Tag>{data["tag"]}</Tag><Discriminator>#{data["discriminator"]}</Discriminator>
+            </TagContainer>
+        )
 
     }
 
     render() {
-        if (this.props.data == null || this.props.data.length < 1) return <div />
-        const data = this.parseData();
-
-        // noinspection JSIncompatibleTypesComparison
-        if (data === null) return <div />
+        let data = this.parseData() || {};
 
         return (
             <ButtonItem href={this.props.href} className="no-select">
                 <ItemContainer>
-                    <ImageContainer>
-                        <ProfileImage src={data["cover"]} className="no-select"/>
-                        <Status state={data["status"]}/>
-                    </ImageContainer>
-                    <TagContainer title="Copy Username" onClick={() => {
-
-                        navigator.clipboard.writeText(`${data["tag"]}#${data["discriminator"]}`).then(null)}
-
-                    }>
-                        <Tag>{data["tag"]}</Tag><Discriminator>#{data["discriminator"]}</Discriminator>
-                    </TagContainer>
+                    {this.getProfileImage(data)}
+                    {this.getTag(data)}
                     {this.getActivity(data)}
                 </ItemContainer>
             </ButtonItem>
