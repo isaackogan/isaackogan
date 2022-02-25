@@ -135,7 +135,7 @@ class ActivityContainer extends Component {
             subtitle={data["subtitle"] || ""}
             text1={data["text1"] || ""}
             text2={data["text2"] || ""}
-            url={data["url"] || ""}
+            url={data["url"] || null}
             progress={data["progress"]}
         />;
     }

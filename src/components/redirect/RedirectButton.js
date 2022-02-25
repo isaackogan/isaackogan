@@ -36,12 +36,11 @@ const ButtonIcon = styled.div`
   padding: 0.5rem 0.5rem 0.25rem;
   display: inline-block;
   margin-right: 20px;
-
 `;
 
-function RedirectButton({name = "Button", href = "#", logo=""}) {
+function RedirectButton({name = "Button", href = "#", logo="", target="", style={}}) {
     return (
-        <ButtonItem className="no-select" href={href} title="Click to Copy">
+        <ButtonItem className="no-select" href={href} title="Click to Copy" target={target} style={style}>
             <ButtonIcon><img alt="" width="25" height="25" src={logo}/></ButtonIcon>
             <ButtonTitle>{name}</ButtonTitle>
         </ButtonItem>

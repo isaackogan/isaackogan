@@ -5,6 +5,7 @@ import RedirectPage from "./redirect/RedirectPage";
 import ActivityContainer from "./activity/ActivityContainer";
 import SocialRedirects from "./redirect/SocialRedirects";
 import ProjectRedirects from "./redirect/ProjectRedirects";
+import UkraineRedirects from "./redirect/UkraineRedirects";
 
 
 
@@ -40,6 +41,7 @@ class Home extends Component {
 
         return (
             <div>
+                <UkraineRedirects />
                 <ActivityContainer rawdata={this.state.data} data={ActivityContainer.parse(this.state.data)}/>
                 <SocialRedirects />
                 <ProjectRedirects />
