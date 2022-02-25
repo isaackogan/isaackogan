@@ -67,6 +67,7 @@ const Main = () => {
             <Route exact path='/filehosting' element={<RedirectPage href={"https://cdn.isaackogan.com/"} />} />
             <Route exact path='/panel' element={<RedirectPage href={"https://panel.isaackogan.com/"} />} />
             <Route exact path='/tiktok' element={<RedirectPage href={"https://www.tiktok.com/@6779789250017592326"} />} />
+            <Route exact path='/tiktoklive' element={<RedirectPage href={"https://github.com/isaackogan/TikTok-Live-Connector"} />} />
         </Routes>
     );
 }
