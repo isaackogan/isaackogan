@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import styled from 'styled-components';
 import "../../css/index.css"
+import Twemoji from 'react-twemoji';
 
 const ButtonItem = styled.a`
   background-color: rgb(62.73, 76.959, 90.27);
@@ -80,7 +81,6 @@ const LoadingImage = styled.div`
   animation: 500ms ease-out 0s 1 fadein;
 `;
 
-
 class Status extends Component {
 
     static #states = {
@@ -99,10 +99,6 @@ class Status extends Component {
     }
 
 }
-
-const CustomStatusText = styled.span`
-  margin-top: 2px;
-`;
 
 class UserPresence extends Component {
 
@@ -125,7 +121,10 @@ class UserPresence extends Component {
                         status = "streaming";
                     }
                     if (activities[activity]["type"] === 4) {
-                        customActivity = activities[activity]["state"]
+                        customActivity = {
+                            "text":  activities[activity]["state"],
+                            "emoji": activities[activity]["emoji"]
+                        }
                     }
                 }
             }
@@ -143,25 +142,40 @@ class UserPresence extends Component {
     }
 
     getActivity(data) {
+
         if (data == null || data["customActivity"] == null) {
             return null;
         }
 
-        return (
-            <CustomStatusText className="no-select" >{data["customActivity"]}</CustomStatusText>
+        // Get custom emote
+        const emojiConfig = data["customActivity"]["emoji"];
+        const customEmote = !emojiConfig ? "" : (
+            !emojiConfig["id"] ? emojiConfig["name"] : (
+                <img alt="" className="twemoji" src={`https://cdn.discordapp.com/emojis/${emojiConfig["id"]}.${emojiConfig["animated"] ? 'gif' : 'png'}`}/>
+            )
         );
+
+        // Build activity text
+        return (
+                <Twemoji options={{"className": "twemoji"}} style={{"display":"flex", "alignItems": "center", "marginTop": "6px"}}>
+                    {customEmote}
+                    <span className="no-select" >{data["customActivity"]["text"]}</span>
+                </Twemoji>
+        );
+
     }
 
     getProfileImage(data) {
         if (!data || !data["tag"]) {
             return <ImageContainer><LoadingImage /></ImageContainer>
         }
+
         return (
-            <ImageContainer>
+                <ImageContainer>
                 <ProfileImage src={data["cover"]} className="no-select"/>
                 <Status state={data["status"]}/>
-            </ImageContainer>
-        )
+                </ImageContainer>
+                )
     }
 
     getTag(data) {
@@ -172,9 +186,7 @@ class UserPresence extends Component {
         }
 
         return (
-            <TagContainer title="Copy Username" onClick={() => {
-                navigator.clipboard.writeText(`${data["tag"]}#${data["discriminator"]}`).then(null)}
-            }>
+            <TagContainer title="Copy Username" onClick={() => {navigator.clipboard.writeText(`${data["tag"]}#${data["discriminator"]}`).then(null)}}>
                 <Tag>{data["tag"]}</Tag><Discriminator>#{data["discriminator"]}</Discriminator>
             </TagContainer>
         )
@@ -185,13 +197,13 @@ class UserPresence extends Component {
         let data = this.parseData() || {};
 
         return (
-            <ButtonItem href={this.props.href} className="no-select">
-                <ItemContainer>
-                    {this.getProfileImage(data)}
-                    {this.getTag(data)}
-                    {this.getActivity(data)}
-                </ItemContainer>
-            </ButtonItem>
+                <ButtonItem href={this.props.href} className="no-select">
+                    <ItemContainer>
+                        {this.getProfileImage(data)}
+                        {this.getTag(data)}
+                        {this.getActivity(data)}
+                    </ItemContainer>
+                </ButtonItem>
         )
     }
 

@@ -95,15 +95,14 @@ class ActivityItem extends Component {
         };
     }
 
-    static secondsToTimestamp(seconds) {
-        let str = new Date(seconds).toISOString().substr(14, 5);
-
-        if (str.startsWith("0")) {
-            str = str.replace("0", "");
-        }
-
-        return str;
-
+    static secondsToTimestamp(s) {
+        s = Math.floor(s);
+        return s < 60 ? "00:" + ((s > 10) ? s.toString() : '0' + s) : (
+            [Math.floor(s / 86400), Math.floor(s / 3600) % 24, Math.floor(s / 60) % 60, s % 60]
+                .filter((number, index, array) => !(array.slice(0, index + 1).every((_number) => _number === 0)))
+                .map((number, index) => (number > 10 || index === 0) ? number.toString() : '0' + number)
+                .join(":")
+        );
     }
 
     componentDidMount() {
@@ -127,8 +126,8 @@ class ActivityItem extends Component {
                     <FillBar style={{"width": (Math.min(percentCompleted * 100, 100)) + "%"}}/>
                 </ProgressBar>
                 <div>
-                    <TimeData style={{"float": "left"}}>{ActivityItem.secondsToTimestamp(timePassed)}</TimeData>
-                    <TimeData style={{"float": "right"}}>{ActivityItem.secondsToTimestamp(songLength)}</TimeData>
+                    <TimeData style={{"float": "left"}}>{ActivityItem.secondsToTimestamp(timePassed / 1000)}</TimeData>
+                    <TimeData style={{"float": "right"}}>{ActivityItem.secondsToTimestamp(songLength / 1000)}</TimeData>
                 </div>
             </TimeContainer>
         )
