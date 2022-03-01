@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import styled from 'styled-components';
 import "../../css/index.css"
-import Twemoji from 'react-twemoji';
+import twemoji from "twemoji";
 
 const ButtonItem = styled.a`
   background-color: rgb(62.73, 76.959, 90.27);
@@ -149,18 +149,20 @@ class UserPresence extends Component {
 
         // Get custom emote
         const emojiConfig = data["customActivity"]["emoji"];
-        const customEmote = !emojiConfig ? "" : (
-            !emojiConfig["id"] ? emojiConfig["name"] : (
-                <img alt="" className="twemoji" src={`https://cdn.discordapp.com/emojis/${emojiConfig["id"]}.${emojiConfig["animated"] ? 'gif' : 'png'}`}/>
-            )
-        );
+        let customEmote = emojiConfig ? (
+            <object draggable="false" className="twemoji" type="image/jpg" data={
+                emojiConfig["id"] ? `https://cdn.discordapp.com/emojis/${emojiConfig["id"]}.${emojiConfig["animated"] ? 'gif' : 'png'}` : (
+                    `https://twitter.github.io/twemoji/v/13.1.0/svg/${twemoji.convert.toCodePoint(emojiConfig["name"])}.svg`
+                )
+            }><img className="twemoji" src={"/discord/activities/noemoji.svg"} alt=""/></object>
+        ) : "";
 
         // Build activity text
         return (
-                <Twemoji options={{"className": "twemoji"}} style={{"display":"flex", "alignItems": "center", "marginTop": "6px"}}>
+            <span style={{"display": "flex", "alignItems": "center", "marginTop": "6px"}}>
                     {customEmote}
-                    <span className="no-select" >{data["customActivity"]["text"]}</span>
-                </Twemoji>
+                <span className="no-select">{data["customActivity"]["text"]}</span>
+                </span>
         );
 
     }

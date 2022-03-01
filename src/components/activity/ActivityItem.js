@@ -162,7 +162,7 @@ class ActivityItem extends Component {
         }
 
         const classList = ["no-select"]
-        if (this.props.url != null) classList.push("linkedActivity")
+        if (this.props.url != null) classList.push("linkedActivity");
 
         return (
             <ButtonItem className={classList} href={this.props.url} target="_blank">
