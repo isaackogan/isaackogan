@@ -57,7 +57,21 @@ const ProfileImage = styled.img`
   object-fit: cover;
   border-radius: 50px;
   z-index: 0;
-  background-color: black;
+  background-color: rgb(68.73,82.959,95.27);
+  border: none;
+`;
+
+const StatusDot = styled.img`
+  position: relative;
+  width: 25px;
+  height: 25px;
+  border-radius: 500px;
+  float: right;
+  display: inline-block;
+  margin-top: -55px;
+  margin-right: -10px;
+  background-color: rgb(62.73,76.959,90.27);
+  border: 6px solid rgb(62.73,76.959,90.27);
 `;
 
 const LoadingTag = styled.span`
@@ -68,7 +82,7 @@ const LoadingTag = styled.span`
   background-color: rgb(68.73,82.959,95.27);
   color: rgb(68.73,82.959,95.27);
   animation: 500ms ease-out 0s 1 fadein;
-`
+`;
 
 const LoadingImage = styled.div`
   width: 100px;
@@ -80,25 +94,6 @@ const LoadingImage = styled.div`
   background-color: rgb(68.73,82.959,95.27);
   animation: 500ms ease-out 0s 1 fadein;
 `;
-
-class Status extends Component {
-
-    static #states = {
-        "online": "/discord/status/online.svg",
-        "idle": "/discord/status/idle.svg",
-        "dnd": "/discord/status/dnd.svg",
-        "offline": "/discord/status/offline.svg",
-        "streaming": "/discord/status/streaming.svg"
-    }
-
-    render() {
-
-        return (
-            <img alt="" className="statusDot no-select" src={Status.#states[this.props.state || 0] || "offline"} />
-        )
-    }
-
-}
 
 class UserPresence extends Component {
 
@@ -130,8 +125,21 @@ class UserPresence extends Component {
             }
         }
 
+        let discriminator = discordUser["discriminator"] || "0000";
+        let discMod;
+
+        try {
+            discMod = parseInt(discriminator) % 5
+        } catch (ex) {
+            discMod = 1
+        }
+
         return {
-            "cover": `https://cdn.discordapp.com/avatars/${discordUser["id"]}/${discordUser["avatar"]}.png?size=128`,
+            "cover": (
+                discordUser["avatar"] ?
+                    `https://cdn.discordapp.com/avatars/${discordUser["id"]}/${discordUser["avatar"]}.png?size=128`
+                    : `https://cdn.discordapp.com/embed/avatars/${discMod}.png`
+            ),
             "tag": discordUser["username"] || "Unknown",
             "discriminator": discordUser["discriminator"] || "0000",
             "status": status,
@@ -167,6 +175,14 @@ class UserPresence extends Component {
 
     }
 
+    #states = {
+        "online": "/discord/status/online.svg",
+        "idle": "/discord/status/idle.svg",
+        "dnd": "/discord/status/dnd.svg",
+        "offline": "/discord/status/offline.svg",
+        "streaming": "/discord/status/streaming.svg"
+    }
+
     getProfileImage(data) {
         if (!data || !data["tag"]) {
             return <ImageContainer><LoadingImage /></ImageContainer>
@@ -174,10 +190,10 @@ class UserPresence extends Component {
 
         return (
                 <ImageContainer>
-                <ProfileImage src={data["cover"]} className="no-select"/>
-                <Status state={data["status"]}/>
+                    <ProfileImage src={data["cover"]} className="no-select" />
+                    <StatusDot className="no-select" src={this.#states[data["status"] || "offline"]}/>
                 </ImageContainer>
-                )
+        )
     }
 
     getTag(data) {
