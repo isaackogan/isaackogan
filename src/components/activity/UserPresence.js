@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import styled from 'styled-components';
 import "../../css/index.css"
-import twemoji from "twemoji";
+import {parse} from "twemoji-parser";
 
 const ButtonItem = styled.a`
   background-color: rgb(62.73, 76.959, 90.27);
@@ -90,7 +90,6 @@ const LoadingImage = styled.div`
   object-fit: cover;
   border-radius: 50px;
   z-index: 0;
-  background-color: black;
   background-color: rgb(68.73,82.959,95.27);
   animation: 500ms ease-out 0s 1 fadein;
 `;
@@ -159,8 +158,8 @@ class UserPresence extends Component {
         const emojiConfig = data["customActivity"]["emoji"];
         let customEmote = emojiConfig ? (
             <object draggable="false" className="twemoji" type="image/jpg" data={
-                emojiConfig["id"] ? `https://cdn.discordapp.com/emojis/${emojiConfig["id"]}.${emojiConfig["animated"] ? 'gif' : 'png'}` : (
-                    `https://twitter.github.io/twemoji/v/13.1.0/svg/${twemoji.convert.toCodePoint(emojiConfig["name"])}.svg`
+                emojiConfig["id"] ? "https://api.isaackogan.com/discord/proxy?url=" + encodeURI(`https://cdn.discordapp.com/emojis/${emojiConfig["id"]}.${emojiConfig["animated"] ? 'gif' : 'png'}`) : (
+                    ((parse(emojiConfig["name"].trim()) || [{}])[0])["url"]
                 )
             }><img className="twemoji" src={"/discord/activities/noemoji.svg"} alt=""/></object>
         ) : "";
@@ -190,7 +189,7 @@ class UserPresence extends Component {
 
         return (
                 <ImageContainer>
-                    <ProfileImage src={data["cover"]} className="no-select" />
+                    <ProfileImage src={`https://api.isaackogan.com/discord/proxy?url=${encodeURI(data["cover"])}`} className="no-select" />
                     <StatusDot className="no-select" src={this.#states[data["status"] || "offline"]}/>
                 </ImageContainer>
         )
