@@ -100,7 +100,7 @@ class ActivityItem extends Component {
         return s < 60 ? "00:" + ((s > 9) ? s.toString() : '0' + s) : (
             [Math.floor(s / 86400), Math.floor(s / 3600) % 24, Math.floor(s / 60) % 60, s % 60]
                 .filter((number, index, array) => !(array.slice(0, index + 1).every((_number) => _number === 0)))
-                .map((number, index) => (number > 10 || index === 0) ? number.toString() : '0' + number)
+                .map((number, index) => (number > 9 || index === 0) ? number.toString() : '0' + number)
                 .join(":")
         );
     }
