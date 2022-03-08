@@ -41,6 +41,7 @@ const ExternalURL = styled.a`
   text-decoration: none;
   font-weight: bold;
   color: #4fa3e7;
+  line-break: anywhere;
 `;
 
 
