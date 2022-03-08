@@ -33,8 +33,6 @@ const ButtonItem = styled.a`
   text-decoration: none;
   outline: 0.5px solid transparent;
   transition: opacity 200ms;
-
-  display: flex;
   align-items: center;
 
   &:hover {
@@ -74,7 +72,7 @@ class UkraineRedirects extends Component {
                     name="Stand With Ukraine (ukraine.ua)" href="https://ukraine.ua/news/stand-with-ukraine/" target="_blank" logo="/logos/tiktok.svg"/>
                 <RedirectButton
                     style={{"background": "linear-gradient(to bottom, rgb(16,53,182) 50%, rgb(229,182,11) 50%)", "borderRadius": "0"}}
-                    name="UNICEF Emergency Relief Fund" href="https://secure.unicef.ca/page/98630/donate/1?ea.tracking.id=22DIEM02GSE&gclid=CjwKCAiA9tyQBhAIEiwA6tdCrIsYdCP1VgLLZzEfJglNrmd_DpqoQ59l4ZWVpyjJQ4URgXQJ_G3lhhoCsLQQAvD_BwE" target="_blank" logo="/logos/tiktok.svg"/>
+                    name="UNICEF GoFundMe Fundraiser" href="/ukraine" target="_blank" logo="/logos/tiktok.svg"/>
                 <RedirectButton
                     style={{"backgroundColor": "rgb(229,182,11)", "borderBottomLeftRadius": "1em", "borderBottomRightRadius": "1em"}}
                     name="UJA Emergency Relief Fund" href="https://jewishtoronto.com/ukraine-emergency-relief-fund?utm_source=emergency+campaign+&utm_medium=email&utm_campaign=Feb_24_22_Ukraine_Emergency_Community_Email" target="_blank" logo="/logos/tiktok.svg"/>

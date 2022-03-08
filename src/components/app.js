@@ -6,6 +6,7 @@ import ActivityContainer from "./activity/ActivityContainer";
 import SocialRedirects from "./redirect/SocialRedirects";
 import ProjectRedirects from "./redirect/ProjectRedirects";
 import UkraineRedirects from "./redirect/UkraineRedirects";
+import FundRaiser from "./ukraine/FundRaiser";
 
 
 
@@ -55,6 +56,7 @@ class Home extends Component {
 const Main = () => {
     return (
         <Routes>
+            <Route exact path="/ukraine" element={<FundRaiser />} />
             <Route exact path='/' element={<Home />} />
             <Route exact path='/snapchat' element={<RedirectPage href={"https://www.snapchat.com/add/isaackogan/"} />} />
             <Route exact path='/github' element={<RedirectPage href={"https://github.com/isaackogan"} />} />
@@ -68,6 +70,7 @@ const Main = () => {
             <Route exact path='/panel' element={<RedirectPage href={"https://panel.isaackogan.com/"} />} />
             <Route exact path='/tiktok' element={<RedirectPage href={"https://www.tiktok.com/@6779789250017592326"} />} />
             <Route exact path='/tiktoklive' element={<RedirectPage href={"https://github.com/isaackogan/TikTok-Live-Connector"} />} />
+            <Route exact path="/uadonate" element={<RedirectPage href={"https://www.gofundme.com/f/send-help-to-children-in-ukraine"} />} />
         </Routes>
     );
 }
