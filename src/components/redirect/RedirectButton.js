@@ -40,7 +40,7 @@ const ButtonIcon = styled.div`
 
 function RedirectButton({name = "Button", href = "#", logo="", target="", style={}}) {
     return (
-        <ButtonItem className="no-select" href={href} title="Click to Copy" target={target} style={style}>
+        <ButtonItem className="no-select" href={href} title="Click to Warp" target={target} style={style}>
             <ButtonIcon><img alt="" width="25" height="25" src={logo}/></ButtonIcon>
             <ButtonTitle>{name}</ButtonTitle>
         </ButtonItem>
