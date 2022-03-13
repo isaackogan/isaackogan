@@ -139,7 +139,7 @@ class ActivityItem extends Component {
         const timePassed = Math.max((this.state.time - this.props.progress["start"]), 0);
 
         return (
-            <span>{ActivityItem.secondsToTimestamp(timePassed)} Elapsed</span>
+            <span>{ActivityItem.secondsToTimestamp(timePassed / 1000)} Elapsed</span>
         )
     }
 
