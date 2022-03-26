@@ -6,9 +6,7 @@ const ContainedRedirect = styled.div`
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-
   margin-top: 50px;
-
   display: flex;
   flex-direction: column;
   
@@ -27,18 +25,16 @@ const RedirectButton = styled.div`
 
   background-color: #041e47;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 15px;
   padding-top: 15px;
   padding-bottom: 15px;
   transition: opacity 200ms;
   cursor: pointer;
-  
-  outline: 0.5px solid transparent;
-  transition: outline-color;
+  transition: opacity;
   
   &:hover {
-    outline-color: rgb(105, 122, 144);
-    transition: outline-color;
+    opacity: 0.8;
+    transition: opacity;
   }
 
   max-height: 20vw;
