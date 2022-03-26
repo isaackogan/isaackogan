@@ -41,12 +41,15 @@ const RedirectButton = styled.div`
     transition: outline-color;
   }
 
-  max-height: 350px;
+  max-height: 20vw;
+  height: 350px;
 
 `
 
 const FundraisingBannerImage = styled.img`
-  max-height: 350px;
+  max-height: 20vw;
+  height: 350px;
+  
 `;
 
 function redirect() {
