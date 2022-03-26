@@ -47,13 +47,6 @@ const RedirectButton = styled.div`
 
 const FundraisingBannerImage = styled.img`
   height: 20vw;
-  
-  -webkit-animation: fadein 300ms; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 300ms; /* Firefox < 16 */
-  -ms-animation: fadein 300ms; /* Internet Explorer */
-  -o-animation: fadein 300ms; /* Opera < 12.1 */
-  animation: fadein 300ms;
-  
 `;
 
 function redirect() {
