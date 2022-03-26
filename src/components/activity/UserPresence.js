@@ -29,6 +29,7 @@ const ImageContainer = styled.div`
   margin-bottom: 12px;
   width: 100px;
   height: 100px;
+  
 `;
 
 const TagContainer = styled.span`
@@ -59,6 +60,7 @@ const ProfileImage = styled.img`
   z-index: 0;
   background-color: rgb(68.73,82.959,95.27);
   border: none;
+  
 `;
 
 const StatusDot = styled.img`

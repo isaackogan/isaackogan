@@ -24,7 +24,7 @@ const ContainedRedirect = styled.div`
 
 
 const RedirectButton = styled.div`
-  
+
   background-color: #041e47;
   text-align: center;
   border-radius: 15px;
@@ -41,11 +41,19 @@ const RedirectButton = styled.div`
     transition: outline-color;
   }
   
+  height: 20vw;
+
 `
 
-const Im = styled.img`
-    width: 25vw;
-
+const FundraisingBannerImage = styled.img`
+  height: 20vw;
+  
+  -webkit-animation: fadein 300ms; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 300ms; /* Firefox < 16 */
+  -ms-animation: fadein 300ms; /* Internet Explorer */
+  -o-animation: fadein 300ms; /* Opera < 12.1 */
+  animation: fadein 300ms;
+  
 `;
 
 function redirect() {
@@ -58,7 +66,7 @@ class UkraineRedirects extends Component {
         return (
             <ContainedRedirect className={`defaultGrey`} onClick={redirect}>
                 <RedirectButton style={{marginTop: "15px"}}>
-                    <Im className={"no-select"} src="/logos/wcifundraiser.png"/>
+                    <FundraisingBannerImage className={"no-select"} src="/logos/wcifundraiser.png"/>
                 </RedirectButton>
             </ContainedRedirect>
         )
