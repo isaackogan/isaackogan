@@ -27,7 +27,7 @@ const RedirectButton = styled.div`
 
   background-color: #041e47;
   text-align: center;
-  border-radius: 15px;
+  border-radius: 5px;
   padding-top: 15px;
   padding-bottom: 15px;
   transition: opacity 200ms;
