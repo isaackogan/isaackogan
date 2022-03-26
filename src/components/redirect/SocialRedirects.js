@@ -29,7 +29,7 @@ class SocialRedirects extends Component {
 
         return (
             <ContainedRedirect className={`defaultGrey`}>
-                <CopyButton name="E-Mail Address (Copy)" copyText="isaacikogan@gmail.com" logo="/logos/email.svg"/>
+                <CopyButton name="E-Mail Address (Copy)" copyText="info@isaackogan.com" logo="/logos/email.svg"/>
                 <RedirectButton name="GitHub" href="/github" logo="/logos/github.svg"/>
                 <RedirectButton name="Spotify" href="/spotify" logo="/logos/spotify.svg"/>
                 <RedirectButton name="Instagram" href="/instagram" logo="/logos/instagram.svg"/>
