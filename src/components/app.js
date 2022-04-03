@@ -72,7 +72,7 @@ const Main = () => {
             <Route exact path='/tiktoklive' element={<RedirectPage href={"https://github.com/isaackogan/TikTok-Live-Connector"} />} />
             <Route exact path="/uadonate" element={<RedirectPage href={"https://www.gofundme.com/f/send-help-to-children-in-ukraine"} />} />
             <Route exact path="/wcidonate" element={<RedirectPage href={"https://www.gofundme.com/f/tvkrsw-ukraine-humanitarian-appeal"} />} />
-
+            <Route exact path="/reddit" element={<RedirectPage href={"https://reddit.com/u/isaackogan"} />} />
         </Routes>
     );
 }
