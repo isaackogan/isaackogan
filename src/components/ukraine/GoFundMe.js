@@ -3,7 +3,7 @@ import {Component} from "react";
 import RedirectButton from "../redirect/RedirectButton";
 
 const ContainedRedirect = styled.div`
-  max-width: 1100px;
+  max-width: 900px;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -15,12 +15,6 @@ const ContainedRedirect = styled.div`
   font-family: Rubik, -apple-system, "Helvetica Neue", Roboto, system-ui, sans-serif;
   color: white;
   
-  &:before {
-    font-size: 30px;
-    font-weight: bold;
-    content: 'GoFundMe Campaign';
-  }
-  
 `;
 
 const FundraiserDescription = styled.div`
@@ -31,10 +25,14 @@ const FundraiserDescription = styled.div`
   color: inherit;
   
   text-decoration: none;
-
+  font-size: 18px;
   display: flex;
   align-items: center;
-    
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+  
 `;
 
 const ExternalURL = styled.a`
@@ -44,6 +42,40 @@ const ExternalURL = styled.a`
   line-break: anywhere;
 `;
 
+const BannerImageContainer = styled.a`
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 14px;
+  cursor: pointer;
+  transition: opacity 300ms;
+
+  &:hover {
+    transition: opacity 300ms;
+    opacity: 0.8;
+  }
+    
+`;
+
+const BannerImage = styled.img`
+  width: 50%;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+  
+`;
+
+const BannerTitle = styled.h1`
+
+  @media (max-width: 768px) {
+    font-size: 25px;
+  }
+`;
 
 class Home extends Component {
 
@@ -57,9 +89,7 @@ class Home extends Component {
         return (
             <div>
                 <ContainedRedirect>
-                    <RedirectButton name="Visit GoFundMe Page" href="/uadonate" logo="/logos/money.svg"/>
                     <FundraiserDescription style={{
-                        "fontSize": "18px",
                         "padding": "0",
                         "paddingLeft": "15%",
                         "paddingRight": "15%",
@@ -67,25 +97,50 @@ class Home extends Component {
                         "paddingBottom": "10%",
                         "display": "inline-block"
                     }}>
-                        <h1 style={{"marginTop": "0px"}}>Raising Money</h1>
-                        Through commissioned software development projects, I've organized this <ExternalURL href={"/uadonate"}>GoFundMe</ExternalURL> to serve as a fundraiser for the dire circumstances in Ukraine. Thousands of families are displaced each day as the onslaught in Ukrainian cities continues by the invading Russian forces.
+                        <BannerTitle style={{"marginTop": "0px"}}>Raised CA$1000 for Ukraine 🎉</BannerTitle>
+                        <BannerImageContainer href={"/uadonate"}><BannerImage alt="Fundraiser" src={"/articles/ukraine/banner.png"}/></BannerImageContainer>
+                        <br/>
+                        <h2 style={{"marginTop": "0px"}}>A Letter from Isaac</h2>
+                        When war broke out in Ukraine it was a shot heard around the world. Social media showed us the
+                        horrors, the bloodbaths, the sheer devastation caused by the onslaught of the invading Russian forces.
                         <br/><br/>
-                        The goal of this fundraiser is to, in small part, help support the country's 7.5 million children by raising money for <ExternalURL target="_blank" href={"https://secure.unicef.ca/page/98630/donate/1"}>UNICEF’s Ukraine Emergency Fund</ExternalURL>.
+                        When I first saw this, in spite of feelings of helplessness, I became determined to start a
+                        one-man <ExternalURL href={"/uadonate"}>GoFundMe</ExternalURL> charity
+                        with the goal of aiding survivors through Humanitarian Relief.
                         <br/><br/>
-                        The money raised through this fundraiser will be matched to further increase its ability to influence the conditions of these ordinary people, people who did nothing to deserve the horrors they are facing.
+                        Specifically, I wanted to help support Ukraine's 7.5 million children by raising money for <ExternalURL target="_blank" href={"https://secure.unicef.ca/page/98630/donate/1"}>UNICEF’s Ukraine Emergency Fund</ExternalURL>.
                         <br/><br/>
-                        As paraphrased from the charity's official page:
+                        They promised the following for each donation:
                         <br/><br/>
                         <div style={{"marginLeft": "15px", "borderLeft": "4px solid white", "paddingLeft": "10px", "borderRadius": "2px", "color": "rgb(240, 240, 240)"}}>
                             Your contribution will help support the response effort to the escalation of the situation in Ukraine by providing communities with safe water, sanitation supplies, urgent medical care, child protection & psychological care, educational supplies.
                         </div>
                         <br/>
-                        Please contact me via my socials listed on <ExternalURL target="_blank" href={"https://www.isaackogan.com/"}>https://www.isaackogan.com/</ExternalURL> for additional inquiries. You can check out the development page for this fundraiser at <ExternalURL target="_blank" href={"https://github.com/isaackogan/TikTokLive"}>https://github.com/isaackogan/TikTokLive</ExternalURL>. If you require custom software for your TikTok live streams, don't hesitate to reach out and start a commission. All commissions should be paid directly to this GoFundMe, but PayPal/BTC/ETH remain as alternative options if you cannot use GoFundMe for whatever reason. If you are not looking for a commission but are interested in donating, you are more than welcome to.
+                        I wanted to make it clear to myself and to my peers: anyone is capable of affecting change.
+                        Even a kid, a 17yo full-time student without a driver's license. It was a matter of pulling on my strengths in spite of my weaknesses.
                         <br/><br/>
-                        There are not a lot of ways that we can help, but, that doesn't mean we shouldn't try.
+                        Through software development projects, I produced
+                        a <ExternalURL target="_blank" href={"https://github.com/isaackogan/TikTokLive/tree/master/examples"}>series of programs</ExternalURL> targeted
+                        towards TikTok Creators, allowing them to introduce new avenues of engagement into their livestreams. Using my software, people created everything from
+                        chat bots to games in their TikTok LIVE's.
                         <br/><br/>
-                        Isaac
-
+                        Collecting <strong>35+ donations</strong> over the span of just <strong>1 month</strong>, I raised <strong>CA$1000</strong>.
+                        In working with these creators, I got to meet people from all around the world. From Poland to Spain to Mexico I was introduced
+                        to unique viewpoints & experiences I had never been exposed to before.
+                        <br/><br/>
+                        I am so grateful to have been in a position where I could volunteer my time to aide
+                        in <ExternalURL target="_blank" href={"https://unfoundation.org/blog/post/the-uns-humanitarian-response-in-ukraine-how-you-can-help/"}>Ukranian Humanitarian Relief</ExternalURL>.
+                        I want to continue exploring humanitarian work; I look forward to future fundraising endeavours.
+                        <br/><br/>
+                        The world can be an awful place and sometimes there aren't a lot of ways that we can help, but this fundraiser taught me a lesson.
+                        When something is difficult, and especially when choosing indifference is so much easier, we owe it to ourselves to try.
+                        <br/><br/>
+                        Regards,
+                        <br/>
+                        Isaac Kogan
+                        <br/><br/>
+                        April 15th, 2022
+                        <br/><br/>
                     </FundraiserDescription>
                 </ContainedRedirect>
             </div>
