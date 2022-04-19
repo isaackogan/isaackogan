@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import {Component} from "react";
-import RedirectButton from "../redirect/RedirectButton";
 
 const ContainedRedirect = styled.div`
   max-width: 900px;
@@ -97,7 +96,7 @@ class Home extends Component {
                         "paddingBottom": "10%",
                         "display": "inline-block"
                     }}>
-                        <BannerTitle style={{"marginTop": "0px"}}>Raised CA$1000 for Ukraine 🎉</BannerTitle>
+                        <BannerTitle style={{"marginTop": "0px"}}>Raised CA$1100+ for Ukraine 🎉</BannerTitle>
                         <BannerImageContainer href={"/uadonate"}><BannerImage alt="Fundraiser" src={"/articles/ukraine/banner.png"}/></BannerImageContainer>
                         <br/>
                         <h2 style={{"marginTop": "0px"}}>A Letter from Isaac</h2>
