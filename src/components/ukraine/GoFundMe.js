@@ -96,7 +96,7 @@ class Home extends Component {
                         "paddingBottom": "10%",
                         "display": "inline-block"
                     }}>
-                        <BannerTitle style={{"marginTop": "0px"}}>Raised CA$1100+ for Ukraine 🎉</BannerTitle>
+                        <BannerTitle style={{"marginTop": "0px"}}>Raised CA$1,100+ for Ukraine 🎉</BannerTitle>
                         <BannerImageContainer href={"/uadonate"}><BannerImage alt="Fundraiser" src={"/articles/ukraine/banner.png"}/></BannerImageContainer>
                         <br/>
                         <h2 style={{"marginTop": "0px"}}>A Letter from Isaac</h2>
@@ -123,7 +123,7 @@ class Home extends Component {
                         towards TikTok Creators, allowing them to introduce new avenues of engagement into their livestreams. Using my software, people created everything from
                         chat bots to games in their TikTok LIVE's.
                         <br/><br/>
-                        Collecting <strong>35+ donations</strong> over the span of just <strong>1 month</strong>, I raised <strong>CA$1000</strong>.
+                        Collecting <strong>35+ donations</strong> over the span of just <strong>1 month</strong>, I raised <strong>CA$1,100+</strong>.
                         In working with these creators, I got to meet people from all around the world. From Poland to Spain to Mexico I was introduced
                         to unique viewpoints & experiences I had never been exposed to before.
                         <br/><br/>
