@@ -7,4 +7,4 @@
 
 ### Thermal Printing 🖨️
 
-Looking for thermal printing on TikTok? I sell that. Check the [TikTokLive](https://github.com/isaackogan/TikTokLive#-ad-thermal-printing-library-) advertisement for more information!
+Looking for thermal printing on TikTok? I sell that. Check the [TikTokPrinter](https://github.com/isaackogan/TikTokPrinter) repo for more.
