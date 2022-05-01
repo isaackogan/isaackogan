@@ -69,10 +69,11 @@ const Main = () => {
             <Route exact path='/filehosting' element={<RedirectPage href={"https://cdn.isaackogan.com/"} />} />
             <Route exact path='/panel' element={<RedirectPage href={"https://panel.isaackogan.com/"} />} />
             <Route exact path='/tiktok' element={<RedirectPage href={"https://www.tiktok.com/@6779789250017592326"} />} />
-            <Route exact path='/tiktoklive' element={<RedirectPage href={"https://github.com/isaackogan/TikTok-Live-Connector"} />} />
+            <Route exact path='/tiktoklive' element={<RedirectPage href={"https://github.com/isaackogan/TikTokLive"} />} />
             <Route exact path="/uadonate" element={<RedirectPage href={"https://www.gofundme.com/f/send-help-to-children-in-ukraine"} />} />
             <Route exact path="/wcidonate" element={<RedirectPage href={"https://www.gofundme.com/f/tvkrsw-ukraine-humanitarian-appeal"} />} />
             <Route exact path="/reddit" element={<RedirectPage href={"https://reddit.com/u/isaackogan"} />} />
+            <Route exact path="/printer" element={<RedirectPage href={"https://github.com/isaackogan/TikTokPrinter"} />} />
         </Routes>
     );
 }

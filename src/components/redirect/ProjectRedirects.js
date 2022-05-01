@@ -30,8 +30,9 @@ class ProjectRedirects extends Component {
         return (
             <ContainedRedirect className={`defaultGrey`}>
                 <RedirectButton name="Raised CA$1,100+ for Ukraine" href="/ukraine" logo="/logos/money.svg"/>
-                <RedirectButton name="Chromegle" href="/chromegle" logo="/logos/chromegle.svg"/>
+                <RedirectButton name="TikTok LIVE Thermal Printing" href="/printer" logo="/logos/printer.svg"/>
                 <RedirectButton name="TikTokLive Library" href="/tiktoklive" logo="/logos/tiktok.svg"/>
+                <RedirectButton name="Chromegle" href="/chromegle" logo="/logos/chromegle.svg"/>
                 <RedirectButton name="8 Ball Magic" href="/eightball" logo="/logos/eightball.svg"/>
                 <RedirectButton name="Mineplex Status" href="/mpstatus" logo="/logos/mpstatus.svg"/>
                 <RedirectButton name="File Hosting" href="/filehosting" logo="/logos/filehosting.svg"/>
