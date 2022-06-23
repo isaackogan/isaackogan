@@ -70,7 +70,7 @@ const StatusDot = styled.img`
   border-radius: 500px;
   float: right;
   display: inline-block;
-  margin-top: -55px;
+  margin-top: -40px;
   margin-right: -10px;
   background-color: rgb(62.73,76.959,90.27);
   border: 6px solid rgb(62.73,76.959,90.27);

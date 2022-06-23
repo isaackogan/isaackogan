@@ -5,8 +5,7 @@ import RedirectPage from "./redirect/RedirectPage";
 import ActivityContainer from "./activity/ActivityContainer";
 import SocialRedirects from "./redirect/SocialRedirects";
 import ProjectRedirects from "./redirect/ProjectRedirects";
-import UkraineRedirects from "./redirect/UkraineRedirects";
-import FundRaiser from "./ukraine/FundRaiser";
+import UnicefDrive from "./ukraine/FundRaiser";
 
 
 
@@ -42,7 +41,6 @@ class Home extends Component {
 
         return (
             <div>
-                <UkraineRedirects />
                 <ActivityContainer rawdata={this.state.data} data={ActivityContainer.parse(this.state.data)}/>
                 <SocialRedirects />
                 <ProjectRedirects />
@@ -56,7 +54,6 @@ class Home extends Component {
 const Main = () => {
     return (
         <Routes>
-            <Route exact path="/ukraine" element={<FundRaiser />} />
             <Route exact path='/' element={<Home />} />
             <Route exact path='/snapchat' element={<RedirectPage href={"https://www.snapchat.com/add/isaackogan/"} />} />
             <Route exact path='/github' element={<RedirectPage href={"https://github.com/isaackogan"} />} />
@@ -74,6 +71,10 @@ const Main = () => {
             <Route exact path="/wcidonate" element={<RedirectPage href={"https://www.gofundme.com/f/tvkrsw-ukraine-humanitarian-appeal"} />} />
             <Route exact path="/reddit" element={<RedirectPage href={"https://reddit.com/u/isaackogan"} />} />
             <Route exact path="/printer" element={<RedirectPage href={"https://github.com/isaackogan/TikTokPrinter"} />} />
+            <Route exact path="/cufdrive" element={<RedirectPage href={"https://www.instagram.com/p/CbsMHVnLVh_/?utm_source=ig_web_copy_link"} />} />
+            <Route exact path="/ujadrive" element={<RedirectPage href={"https://www.ujagenesis.com/lighting-the-way-a-high-school-holiday-project"} />} />}
+            <Route exact path="/unicefdrive" element={<UnicefDrive />} />
+            <Route exact path="/ukraine" element={<RedirectPage href={"/unicefdrive"} />} />
         </Routes>
     );
 }
