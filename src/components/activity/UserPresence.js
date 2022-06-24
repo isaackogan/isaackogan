@@ -4,6 +4,7 @@ import "../../css/index.css"
 import {parse} from "twemoji-parser";
 
 const ButtonItem = styled.a`
+  
   background-color: rgb(62.73, 76.959, 90.27);
   border-radius: 0.25rem;
   padding: 1.0rem 1.0rem 0.9rem;
