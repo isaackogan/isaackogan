@@ -1,5 +1,5 @@
 ### Hey there 👋
-- 🌱 I'm a post-highschool pre-university student and neophyte programming _hobbyist_. I'm not a programmer, they are far more talented. 
+- 🌱 I'm a post-highschool pre-university student and neophyte programming hobbyist.
 - 💃 Working with TikTok on my [TikTokLive](https://github.com/isaackogan/TikTok-Live-Connector) library!
 - 🔭 Currently managing my [Chromegle](https://github.com/isaackogan/Chromegle) Extension
 - 📫 Email me at info@isaackogan.com for any inquiries
