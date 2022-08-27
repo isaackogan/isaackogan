@@ -1,6 +1,5 @@
 import React from "react";
 import styled from 'styled-components';
-import "../css/index.css";
 
 const HeaderBar = styled.div`
   height: 10%;

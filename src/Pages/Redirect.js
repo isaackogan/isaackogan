@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import styled from 'styled-components';
 
-const RedirectItem = styled.a`
+const RedirectItem = styled.span`
   background-color: rgba(62.73, 76.959, 90.27);
   border-radius: 0.25rem;
   padding: 1.5rem;
@@ -40,40 +40,27 @@ const LoadRing = styled.div`
     border-color: #e3e3e3 transparent #e5e5e5 transparent;
     animation: lds-dual-ring 1.2s linear infinite;
   }
-
-  @keyframes lds-dual-ring {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-
-  }
+  
 `;
 
 
 
-class RedirectPage extends Component {
+class Redirect extends Component {
 
     render() {
-        setTimeout(() => {
-            window.location.href = this.props.href;
-        }, 1500);
-
+        setTimeout(() => window.location.href = this.props.href, 1500);
         return (
-
             <RedirectContainer>
                 <LoadRing />
                 <RedirectItem>
-                    <h3 className="defaultGrey">Redirecting you to <a className="redirectLink" href={this.props.href}>{this.props.href}</a></h3>
+                    <h3 className="defaultGrey">
+                        Redirecting you to <a className="redirectLink" href={this.props.href}>{this.props.href}</a>
+                    </h3>
                 </RedirectItem>
             </RedirectContainer>
-
         )
-
     }
 
 }
 
-export default RedirectPage;
+export default Redirect;

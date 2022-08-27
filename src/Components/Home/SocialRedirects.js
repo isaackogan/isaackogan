@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import RedirectButton from "./RedirectButton";
+import LinkButton from "./RedirectButtons/LinkButton";
 import styled from 'styled-components';
-import CopyButton from "./CopyButton";
+import CopyButton from "./RedirectButtons/CopyButton";
 
 const ContainedRedirect = styled.div`
   max-width: 1100px;
@@ -30,13 +30,12 @@ class SocialRedirects extends Component {
         return (
             <ContainedRedirect className={`defaultGrey`}>
                 <CopyButton name="E-Mail Address (Copy)" copyText="info@isaackogan.com" logo="/logos/email.svg"/>
-                <RedirectButton name="GitHub" href="/github" logo="/logos/github.svg"/>
-                <RedirectButton name="Spotify" href="/spotify" logo="/logos/spotify.svg"/>
-                <RedirectButton name="Instagram" href="/instagram" logo="/logos/instagram.svg"/>
-                <RedirectButton name="Snapchat" href="/snapchat" logo="/logos/snapchat.svg"/>
-                <RedirectButton name="TikTok" href="/tiktok" logo="/logos/tiktok.svg"/>
-                <RedirectButton name="LinkedIn" href="/linkedin" logo="/logos/linkedin.svg"/>
-                <RedirectButton name="Reddit" href="/reddit" logo="/logos/reddit.svg"/>
+                <LinkButton name="GitHub" href="/github" logo="/logos/github.svg"/>
+                <LinkButton name="Spotify" href="/spotify" logo="/logos/spotify.svg"/>
+                <LinkButton name="Instagram" href="/instagram" logo="/logos/instagram.svg"/>
+                <LinkButton name="Snapchat" href="/snapchat" logo="/logos/snapchat.svg"/>
+                <LinkButton name="LinkedIn" href="/linkedin" logo="/logos/linkedin.svg"/>
+                <LinkButton name="Reddit" href="/reddit" logo="/logos/reddit.svg"/>
             </ContainedRedirect>
         )
     }

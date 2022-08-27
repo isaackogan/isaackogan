@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import styled from 'styled-components';
-import "../../css/index.css"
 import {parse} from "twemoji-parser";
 
 const ButtonItem = styled.a`

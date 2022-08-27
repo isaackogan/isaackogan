@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import styled from 'styled-components';
-import "../../css/index.css"
 
 const ButtonItem = styled.a`
   background-color: rgb(62.73, 76.959, 90.27);

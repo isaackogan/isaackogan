@@ -1,6 +1,5 @@
 import React from "react";
 import styled from 'styled-components';
-import "../../css/index.css"
 
 const ButtonItem = styled.a`
   background-color: rgba(62.73, 76.959, 90.27);
@@ -38,7 +37,7 @@ const ButtonIcon = styled.div`
   margin-right: 20px;
 `;
 
-function RedirectButton({name = "Button", href = "#", logo="", target="", style={}}) {
+function LinkButton({name = "Button", href = "#", logo="", target="", style={}}) {
     return (
         <ButtonItem className="no-select" href={href} title="Click to Warp" target={target} style={style}>
             <ButtonIcon><img alt="" width="25" height="25" src={logo}/></ButtonIcon>
@@ -47,5 +46,5 @@ function RedirectButton({name = "Button", href = "#", logo="", target="", style=
     )
 }
 
-export default RedirectButton;
+export default LinkButton;
 

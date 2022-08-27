@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-import ActivityItem from "./ActivityItem";
-import UserPresence from "./UserPresence";
+import ActivityItem from "./DiscordActivity/ActivityItem";
+import UserPresence from "./DiscordActivity/UserPresence";
 
 const ContainedActivity = styled.div`
   max-width: 1100px;
@@ -98,7 +98,7 @@ const ActivityParser = {
 }
 
 
-class ActivityContainer extends Component {
+class DiscordActivity extends Component {
 
     constructor(props) {
         super(props);
@@ -163,5 +163,5 @@ class ActivityContainer extends Component {
 
     }
 }
-export default ActivityContainer;
+export default DiscordActivity;
 

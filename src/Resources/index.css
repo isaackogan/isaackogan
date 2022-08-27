@@ -30,6 +30,15 @@
     color: #6478db;
 }
 
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .lds-ring {
     display: inline-block;
     position: relative;
