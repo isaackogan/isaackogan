@@ -12,7 +12,7 @@
 
 message IsaacKogan {
   required int32 age = 18;
-  required Schools education = 4;
+  required Schools schools = 4;
   required Languages languages = 3;
 }
 
