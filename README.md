@@ -1,10 +1,31 @@
-### Hey there 👋
-- 🌱 I'm a post-highschool pre-university student and neophyte programming hobbyist.
-- 💃 Working with TikTok on my [TikTokLive](https://github.com/isaackogan/TikTok-Live-Connector) library!
-- 🔭 Currently managing my [Chromegle](https://github.com/ChromegleApp/Chromegle) Extension
-- 📫 Email me at info@isaackogan.com for any inquiries
-- ⚡ Connect with me on [LinkedIn](https://www.linkedin.com/in/isaackogan/). Going into Uni soon!
+## Hey, I'm Isaac Kogan! 👋
+ 
+- 🎓 Student at York University and programming hobbyist
+- ⏰ Working on TikTok via my [TikTokLive](https://github.com/isaackogan/TikTok-Live-Connector) library
+- 🌐 Managing my [Chromegle](https://github.com/ChromegleApp/Chromegle) Chrome App
+- 📫 Reach me at [info@isaackogan.com](mailto:info@isaackogan.com) for questions, concerns, and with dog photos
+- ⚡ Connect with me on [LinkedIn](https://www.linkedin.com/in/isaackogan/). Note that I only accept connections to people I know
 
-### Thermal Printing 🖨️
+### All About Me
 
-Looking for thermal printing on TikTok? I sell that. Check the [TikTokPrinter](https://github.com/isaackogan/TikTokPrinter) repository for more information.
+```protobuf
+
+message IsaacKogan {
+  required int32 age = 18;
+  required Schools education = 4;
+  required Languages languages = 3;
+}
+
+message Schools {
+  required string undergraduate = 1; // York University, Ontario
+  required string highSchool = 2; // Westmount C.I. & King City S.S.
+  required string middleSchool = 3; // Academy for Gifted Children - P.A.C.E.
+}
+
+message Languages {
+  required int32 java = 1;
+  required int32 python = 2;
+  required int32 nodejs = 3;
+}
+
+```
