@@ -17,7 +17,7 @@ message IsaacKogan {
 }
 
 message Schools {
-  required string undergraduate = 1; // York University, Ontario
+  required string university = 1; // York University, BSc (Class of 2026)
   required string highSchool = 2; // Westmount C.I. & King City S.S.
   required string middleSchool = 3; // Academy for Gifted Children - P.A.C.E.
 }
