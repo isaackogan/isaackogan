@@ -9,9 +9,8 @@
 ### About Me
 
 ```protobuf
-/*
-Protobuf. You either hate it, or tolerate it.
- */
+
+// Protobuf. You either hate it, or tolerate it. //
 
 message IsaacKogan {
   required int32 age = 18;
