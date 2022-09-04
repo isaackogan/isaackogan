@@ -6,7 +6,7 @@
 - 📫 Reach me at [info@isaackogan.com](mailto:info@isaackogan.com) for questions, concerns, and with dog photos
 - ⚡ Connect with me on [LinkedIn](https://www.linkedin.com/in/isaackogan/). Note that I only accept connections to people I know
 
-### About Me, Isaac
+### About Me, Myself, and I
 
 ```protobuf
 
