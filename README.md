@@ -10,7 +10,7 @@
 
 ```protobuf
 
-// Protobuf. You either hate it, or tolerate it. 
+// Protobuf :(
 
 message IsaacKogan {
   required int32 age = 18;
