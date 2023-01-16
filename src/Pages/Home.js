@@ -13,7 +13,7 @@ class Home extends Component {
     }
 
     updateData() {
-        fetch(`https://api.lanyard.rest/v1/users/699802828356583435`, {
+        fetch(`https://api.lanyard.rest/v1/users/484491536898326539`, {
             headers: {
                 'Access-Control-Allow-Origin':'*'
             }
