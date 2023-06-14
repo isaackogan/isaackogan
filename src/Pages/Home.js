@@ -1,9 +1,7 @@
 import Header from "../Components/Header";
 import {Component} from "react";
 import SocialRedirects from "../Components/Home/SocialRedirects";
-import ProjectRedirects from "../Components/Home/ProjectRedirects";
 import "../Resources/index.css";
-import DiscordActivity from "../Components/Home/DiscordActivity";
 
 class Home extends Component {
 
@@ -38,9 +36,8 @@ class Home extends Component {
         return (
             <div>
                 <Header />
-                <DiscordActivity rawdata={this.state.data} data={DiscordActivity.parse(this.state.data)}/>
-                <SocialRedirects />
-                <ProjectRedirects />
+                <SocialRedirects title={"Social Links"} links={this.props.config['social']}/>
+                <SocialRedirects title={"Project Links"} links={this.props.config['project']}/>
             </div>
         )
     }

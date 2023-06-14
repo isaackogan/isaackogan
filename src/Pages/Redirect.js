@@ -47,8 +47,16 @@ const LoadRing = styled.div`
 
 class Redirect extends Component {
 
-    render() {
+    componentDidMount() {
+
+        document.getElementById("icon")
+            .setAttribute("href", `/logos/${this.props.icon}`);
+
         setTimeout(() => window.location.href = this.props.href, 1500);
+
+    }
+
+    render() {
         return (
             <RedirectContainer>
                 <LoadRing />

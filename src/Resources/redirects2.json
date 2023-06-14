@@ -1,0 +1,13 @@
+{
+  "social": [
+    {
+      "name": "Snapchat",
+      "paths": ["/snapchat", "/snap"],
+      "url": "https://www.snapchat.com/add/isaackogan/",
+      "icon": "snapchat.svg"
+    }
+  ],
+  "project": [
+
+  ]
+}
