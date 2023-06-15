@@ -2,6 +2,7 @@ import Header from "../Components/Header";
 import {Component} from "react";
 import SocialRedirects from "../Components/Home/SocialRedirects";
 import "../Resources/index.css";
+import DiscordActivity from "../Components/Home/DiscordActivity";
 
 class Home extends Component {
 
@@ -21,6 +22,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
+        this.updateData();
         setInterval(() => {
             this.updateData();
         }, 10 * 1000)
@@ -31,6 +33,7 @@ class Home extends Component {
         return (
             <div>
                 <Header />
+                <DiscordActivity rawdata={this.state.data} data={DiscordActivity.parse(this.state.data)}/>
                 <SocialRedirects title={"Social Links"} links={this.props.config['social']}/>
                 <SocialRedirects title={"Project Links"} links={this.props.config['project']}/>
             </div>

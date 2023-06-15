@@ -37,7 +37,7 @@ const ButtonIcon = styled.div`
   margin-right: 20px;
 `;
 
-function LinkButton({name = "Button", href = "#", logo="", target="", style={}}) {
+function LinkButton({name = "Button", href = "#", logo="", target="_blank", style={}}) {
     return (
         <ButtonItem className="no-select" href={href} title="Click to Warp" target={target} style={style}>
             <ButtonIcon><img alt="" width="25" height="25" src={logo}/></ButtonIcon>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import styled from 'styled-components';
 
 const ButtonItem = styled.a`
@@ -20,11 +20,7 @@ const ButtonItem = styled.a`
     outline-color: rgb(105, 122, 144);
     transition: outline-color 100ms;
   }
-  
-  &:active {
-    transition: opacity 100ms;
-    opacity: 0.5;
-  }
+
 
 `;
 
@@ -43,18 +39,46 @@ const ButtonIcon = styled.div`
 
 `;
 
-function CopyButton({name = "Button", value = "", logo=""}) {
-    return (
-        <ButtonItem
+
+class CopyButton extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {copyActive: false}
+    }
+
+    getText() {
+        if (this.state.copyActive) {
+            return `${this.props.name} (Copied Item)`
+        }
+
+        return `${this.props.name} (Click To Copy)`
+    }
+
+    onClick() {
+        navigator.clipboard.writeText(this.props.value).then(null);
+        this.setState({copyActive: true});
+
+
+        setTimeout(() => {
+            this.setState({copyActive: false});
+        }, 1000);
+    }
+    render() {
+        return (
+            <ButtonItem
                 className="no-select"
-                onClick={() => navigator.clipboard.writeText(value).then(null)}
+                onClick={this.onClick.bind(this)}
                 title="Click to Copy"
-        >
-            <ButtonIcon><img alt="" width="25" height="25" src={logo}/></ButtonIcon>
-            <ButtonTitle>{name}</ButtonTitle>
-        </ButtonItem>
-    )
+            >
+                <ButtonIcon><img alt="" width="25" height="25" src={this.props.logo}/></ButtonIcon>
+                <ButtonTitle>{this.getText()}</ButtonTitle>
+            </ButtonItem>
+        );
+    }
+
 }
+
 
 export default CopyButton;
 

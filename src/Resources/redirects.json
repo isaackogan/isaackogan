@@ -1,7 +1,7 @@
 {
   "social": [
     {
-      "name": "E-Mail (Click To Copy)",
+      "name": "E-Mail",
       "value": "info@isaackogan.com",
       "icon": "email.svg",
       "copy": true
@@ -33,10 +33,16 @@
   ],
   "project": [
     {
-      "name": "TikTokLive",
+      "name": "TikTokLive Python Library",
       "path": "tiktoklive",
       "url": "https://github.com/isaackogan/TikTokLive",
       "icon": "tiktok.svg"
+    },
+    {
+      "name": "Chromegle - Omegle Automation",
+      "path": ["chromegle", "omegle"],
+      "url": "https://chrome.google.com/webstore/detail/chromegle-omegle-ip-pulle/gcbbaikjfjmidabapdnebofcmconhdbn/",
+      "icon": "chromegle.svg"
     },
     {
       "name": "CA$50,000+ COVID-19 Fundraiser",
@@ -55,12 +61,6 @@
       "path": ["unicef-drive", "ucfdrive"],
       "url": "https://www.gofundme.com/f/send-help-to-children-in-ukraine",
       "icon": "child.svg"
-    },
-    {
-      "name": "Chromegle - Omegle Automation",
-      "path": ["chromegle", "omegle"],
-      "url": "https://chrome.google.com/webstore/detail/chromegle-omegle-ip-pulle/gcbbaikjfjmidabapdnebofcmconhdbn/",
-      "icon": "chromegle.svg"
     }
   ]
 }
