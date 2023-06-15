@@ -19,7 +19,7 @@ const ContainedActivity = styled.div`
   &:before {
     font-size: 30px;
     font-weight: bold;
-    content: 'Discord Presence';
+    content: 'Discord';
   }
   
 `;

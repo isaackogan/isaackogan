@@ -48,10 +48,6 @@ const Tag = styled.span`
   color: #e8e8e8;
 `;
 
-const Discriminator = styled.span`
-  color: #b6b6b6;
-`;
-
 const ProfileImage = styled.img`
   width: 100px;
   height: 100px;
@@ -126,23 +122,14 @@ class UserPresence extends Component {
             }
         }
 
-        let discriminator = discordUser["discriminator"] || "0000";
-        let discMod;
-
-        try {
-            discMod = parseInt(discriminator) % 5
-        } catch (ex) {
-            discMod = 1
-        }
 
         return {
             "cover": (
                 discordUser["avatar"] ?
                     `https://cdn.discordapp.com/avatars/${discordUser["id"]}/${discordUser["avatar"]}.png?size=128`
-                    : `https://cdn.discordapp.com/embed/avatars/${discMod}.png`
+                    : `https://cdn.discordapp.com/embed/avatars/1.png`
             ),
             "tag": discordUser["username"] || "Unknown",
-            "discriminator": discordUser["discriminator"] || "0000",
             "status": status,
             "customActivity": customActivity
         }
@@ -205,8 +192,8 @@ class UserPresence extends Component {
         }
 
         return (
-            <TagContainer title="Copy Username" onClick={() => {navigator.clipboard.writeText(`${data["tag"]}#${data["discriminator"]}`).then(null)}}>
-                <Tag>{data["tag"]}</Tag><Discriminator>#{data["discriminator"]}</Discriminator>
+            <TagContainer title="Copy Username" onClick={() => {navigator.clipboard.writeText(`${data["tag"]}`).then(null)}}>
+                <Tag>{data["tag"]}</Tag>
             </TagContainer>
         )
 
