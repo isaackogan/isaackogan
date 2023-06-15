@@ -47,15 +47,23 @@ const LoadRing = styled.div`
 
 class Redirect extends Component {
 
+    /**
+     * Handle the redirect logic & set page favicon
+     */
     componentDidMount() {
 
-        document.getElementById("icon")
-            .setAttribute("href", `/logos/${this.props.icon}`);
+        document.getElementById("icon").setAttribute(
+            "href", `/logos/${this.props.icon}`
+        );
 
         setTimeout(() => window.location.href = this.props.href, 1500);
 
     }
 
+    /**
+     * Render the redirect page
+     * @returns {JSX.Element}
+     */
     render() {
         return (
             <RedirectContainer>

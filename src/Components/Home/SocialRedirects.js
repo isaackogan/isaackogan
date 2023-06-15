@@ -23,37 +23,53 @@ const ContainedRedirect = styled.div`
   }
 `;
 
-/*
-         <CopyButton name="E-Mail Address (Copy)" copyText="info@isaackogan.com" logo="/logos/email.svg"/>
-                <LinkButton name="GitHub" href="/github" logo="/logos/github.svg"/>
-                <LinkButton name="Spotify" href="/spotify" logo="/logos/spotify.svg"/>
-                <LinkButton name="Instagram" href="/instagram" logo="/logos/instagram.svg"/>
-                <LinkButton name="Snapchat" href="/snapchat" logo="/logos/snapchat.svg"/>
-                <LinkButton name="LinkedIn" href="/linkedin" logo="/logos/linkedin.svg"/>
-                <LinkButton name="Reddit" href="/reddit" logo="/logos/reddit.svg"/>
-
-                <LinkButton name="CA$5,000+ COVID-19 Fundraiser" href="/ujadrive" logo="/logos/covid.svg"/>
-                <LinkButton name="CA$2,500+ CA-Ukraine Fundraiser" href="/cufdrive" logo="/logos/ukraine.svg"/>
-                <LinkButton name="CA$1,000+ UNICEF Fundraiser" href="/ucfdrive" logo="/logos/child.svg"/>
-                <LinkButton name="TikTokLive (Fundraising for The Trevor Project)" href="/tiktoklive" logo="/logos/tiktok.svg"/>
-                <LinkButton name="Class Find Tool: Student-Made for YorkU" href="/classfinder" logo="/logos/classfinder.svg"/>
-                <LinkButton name="Star Professors: Student-Made for YorkU" href="/starprofessor" logo="/logos/starprofessor.svg"/>
-                <LinkButton name="Chromegle - Omegle Automation" href="/chromegle" logo="/logos/chromegle.svg"/>
-                <LinkButton name="File Hosting - ShareX CDN Server" href="/filehosting" logo="/logos/filehosting.svg"/>
-
- */
 class SocialRedirects extends Component {
 
     constructor(props) {
         super(props);
     }
 
-    render() {
+    getButtonHref(link) {
+        if (link.redirected === true || link.redirected == null) {
+            let opt = Array.isArray(link.path) ? link.path?.[0] : link.path;
+            return opt || link.url;
+        }
 
+        return link.url;
+    }
+
+    genButtons(buttons = []) {
+        for (const link of this.props.links) {
+
+            if (link.copy) {
+               buttons.push(
+                   <CopyButton
+                       name={link.name}
+                       value={link.value}
+                       logo={`/logos/${link.icon}`}
+                       key={`copy-button-${link.name.toLowerCase()}`}
+                   />
+               )
+            }
+            else {
+                buttons.push(
+                    <LinkButton
+                        name={link.name}
+                        href={this.getButtonHref(link)}
+                        logo={`/logos/${link.icon}`}
+                        key={`redirect-button-${link.name.toLowerCase()}`}
+                    />
+                )
+            }
+        }
+        return buttons;
+    }
+
+    render() {
 
         return (
             <ContainedRedirect title={this.props.title} className={`defaultGrey`}>
-
+                {this.genButtons()}
             </ContainedRedirect>
         )
     }

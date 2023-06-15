@@ -2,7 +2,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./Pages/Home";
 
 import Redirect from "./Pages/Redirect";
-import Redirects from "./Resources/redirects2.json";
+import Redirects from "./Resources/redirects.json";
 
 /**
  * Generate redirect pages
@@ -12,7 +12,8 @@ import Redirects from "./Resources/redirects2.json";
 const createRedirects = (redirects = []) => {
     for (const category of Object.keys(Redirects)) {
         for (const entry of Redirects[category]) {
-            for (const path of entry.paths) {
+            let paths = Array.isArray(entry.path) ? entry.path : [entry.path];
+            for (const path of paths) {
                 redirects.push(
                     <Route
                         path={`${path}`}
@@ -28,7 +29,7 @@ const createRedirects = (redirects = []) => {
 
 
 /**
- * Generate the app
+ * Generate the app element
  * @returns {JSX.Element} React App
  * @constructor N/A
  */

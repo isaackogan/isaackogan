@@ -20,15 +20,10 @@ class Home extends Component {
             .then(json => this.setState({ data: json }));
     }
 
-    updateInfinite() {
-        this.updateData()
-        setTimeout(() => {
-            this.updateInfinite();
-        }, 10 * 1000);
-    }
-
     componentDidMount() {
-        this.updateInfinite()
+        setInterval(() => {
+            this.updateData();
+        }, 10 * 1000)
     }
 
     render() {

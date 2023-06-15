@@ -1,27 +1,66 @@
-
-
-
-
 {
-  "snapchat": "https://www.snapchat.com/add/isaackogan/",
-  "github": "https://github.com/isaackogan",
-  "linkedin": "https://www.linkedin.com/in/isaackogan/",
-  "instagram": "https://www.instagram.com/isaackogan/",
-  "spotify": "https://open.spotify.com/user/djpwnerz/",
-  "eightball": "https://github.com/isaackogan/8-Ball-Magic/",
-  "chromegle": "https://chrome.google.com/webstore/detail/chromegle-omegle-ip-pulle/gcbbaikjfjmidabapdnebofcmconhdbn/",
-  "mpstatus": "https://status.mineplex.club/",
-  "filehosting": "https://cdn.isaackogan.com/",
-  "panel": "https://panel.isaackogan.com/",
-  "tiktok": "https://www.tiktok.com/@6779789250017592326",
-  "tiktoklive": "https://github.com/isaackogan/TikTokLive",
-  "reddit": "https://reddit.com/u/isaackogan",
-  "uadonate": "https://www.gofundme.com/f/send-help-to-children-in-ukraine",
-  "wcidonate": "https://www.gofundme.com/f/tvkrsw-ukraine-humanitarian-appeal",
-  "printer": "https://github.com/isaackogan/TikTokPrinter",
-  "cufdrive": "https://www.instagram.com/p/CbsMHVnLVh_/?utm_source=ig_web_copy_link",
-  "ujadrive": "https://www.ujagenesis.com/lighting-the-way-a-high-school-holiday-project",
-  "starprofessors": "https://stars.yorku.dev/",
-  "classfinder": "https://find.yorku.dev/",
-  "ucfdrive": "https://www.gofundme.com/f/send-help-to-children-in-ukraine"
+  "social": [
+    {
+      "name": "E-Mail (Click To Copy)",
+      "value": "info@isaackogan.com",
+      "icon": "email.svg",
+      "copy": true
+    },
+    {
+      "name": "Snapchat",
+      "path": ["/snapchat", "/snap"],
+      "url": "https://www.snapchat.com/add/isaackogan/",
+      "icon": "snapchat.svg"
+    },
+    {
+      "name": "GitHub",
+      "path": "/github",
+      "url": "https://github.com/isaackogan",
+      "icon": "github.svg"
+    },
+    {
+      "name": "Instagram",
+      "path": "/instagram",
+      "url": "https://instagram.com/isaackogan",
+      "icon": "instagram.svg"
+    },
+    {
+      "name": "LinkedIn",
+      "path": "/linkedin",
+      "url": "https://www.linkedin.com/in/isaackogan/",
+      "icon": "linkedin.svg"
+    }
+  ],
+  "project": [
+    {
+      "name": "TikTokLive",
+      "path": "tiktoklive",
+      "url": "https://github.com/isaackogan/TikTokLive",
+      "icon": "tiktok.svg"
+    },
+    {
+      "name": "CA$50,000+ COVID-19 Fundraiser",
+      "path": ["uja-drive", "ujadrive"],
+      "url": "https://jewishtoronto.crowdchange.co/16607",
+      "icon": "covid.svg"
+    },
+    {
+      "name": "CA$1,500+ CA-Ukraine Fundraiser",
+      "path": ["cuf-drive", "cufdrive"],
+      "url": "https://www.gofundme.com/f/tvkrsw-ukraine-humanitarian-appeal",
+      "icon": "ukraine.svg"
+    },
+    {
+      "name": "CA$1,000+ UNICEF Fundraiser",
+      "path": ["unicef-drive", "ucfdrive"],
+      "url": "https://www.gofundme.com/f/send-help-to-children-in-ukraine",
+      "icon": "child.svg"
+    },
+    {
+      "name": "Chromegle - Omegle Automation",
+      "path": ["chromegle", "omegle"],
+      "url": "https://chrome.google.com/webstore/detail/chromegle-omegle-ip-pulle/gcbbaikjfjmidabapdnebofcmconhdbn/",
+      "icon": "chromegle.svg"
+    }
+  ]
 }

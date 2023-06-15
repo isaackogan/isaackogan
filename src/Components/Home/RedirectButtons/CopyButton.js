@@ -43,9 +43,13 @@ const ButtonIcon = styled.div`
 
 `;
 
-function CopyButton({name = "Button", copyText = "", logo=""}) {
+function CopyButton({name = "Button", value = "", logo=""}) {
     return (
-        <ButtonItem className="no-select" onClick={() => navigator.clipboard.writeText(copyText).then(null)} title="Click to Copy">
+        <ButtonItem
+                className="no-select"
+                onClick={() => navigator.clipboard.writeText(value).then(null)}
+                title="Click to Copy"
+        >
             <ButtonIcon><img alt="" width="25" height="25" src={logo}/></ButtonIcon>
             <ButtonTitle>{name}</ButtonTitle>
         </ButtonItem>
