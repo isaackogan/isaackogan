@@ -1,27 +1,19 @@
 import React, {Component} from "react";
 import styled from 'styled-components';
+import Header from "../Components/Header";
+import {HomeBackground, HomeContainer} from "./Home";
 
 const RedirectItem = styled.span`
-  background-color: rgba(62.73, 76.959, 90.27);
+  background-color: var(--secondary);
   border-radius: 0.25rem;
   padding: 1.5rem;
   font-family: Rubik, -apple-system, "Helvetica Neue", Roboto, system-ui, sans-serif;
-  margin-top: 15px;
+  margin-top: 100px;
   text-decoration: none;
   outline: 0.5px solid transparent;
   transition: outline-color 200ms;
   word-break: break-all;
-`;
-
-const RedirectContainer = styled.div`
-  max-width: 1100px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  height: 500px;
+  width: 100%;
 `;
 
 const LoadRing = styled.div`
@@ -36,11 +28,27 @@ const LoadRing = styled.div`
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 12px solid #efefef;
-    border-color: #e3e3e3 transparent #e5e5e5 transparent;
+    border: 16px solid var(--secondary);
+    border-color: var(--secondary) transparent var(--secondary) transparent;
     animation: lds-dual-ring 1.2s linear infinite;
   }
   
+`;
+
+const RedirectPageContainer = styled.div`
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  width: 75%;
+  max-width: 900px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 `;
 
 
@@ -66,14 +74,18 @@ class Redirect extends Component {
      */
     render() {
         return (
-            <RedirectContainer>
-                <LoadRing />
-                <RedirectItem>
-                    <h3 className="defaultGrey">
-                        Redirecting you to <a className="redirectLink" href={this.props.href}>{this.props.href}</a>
-                    </h3>
-                </RedirectItem>
-            </RedirectContainer>
+            <HomeContainer style={{minHeight: "100vh"}}>
+                <Header />
+                <HomeBackground style={{height: "100%"}}></HomeBackground>
+                <RedirectPageContainer>
+                    <LoadRing />
+                    <RedirectItem>
+                        <h3 className="defaultGrey">
+                            Redirecting you to <a className="redirectLink" href={this.props.href}>{this.props.href}</a>
+                        </h3>
+                    </RedirectItem>
+                </RedirectPageContainer>
+            </HomeContainer>
         )
     }
 

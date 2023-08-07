@@ -1,47 +1,80 @@
 import React from "react";
 import styled from 'styled-components';
 
-const ButtonItem = styled.a`
-  background-color: rgba(62.73, 76.959, 90.27);
+export const ButtonItem = styled.a`
+  background-color: var(--secondary);
   border-radius: 0.25rem;
   padding: 1.5rem;
   cursor: pointer;
-  margin-top: 15px;
+  margin-top: 8px;
+  margin-bottom: 8px;
   color: inherit;
-  
   text-decoration: none;
   outline: 0.5px solid transparent;
   transition: outline-color 200ms;
-
   display: flex;
   align-items: center;
-  
+  opacity: 0.85;
   &:hover {
-    outline-color: rgb(105, 122, 144);
+    outline-color: var(--secondary);
     transition: outline-color 200ms;
+    opacity: 0.95;
   }
-    
+  
+  &:active {
+    opacity: 1;
+  }
+
 `;
 
-const ButtonTitle = styled.span`
+export const ButtonTitle = styled.span`
   font-size: 20px;
   display: inline-block;
+  color: #e5eff8;
 `;
 
-const ButtonIcon = styled.div`
+export const ButtonIcon = styled.div`
   border-radius: 9999px;
   --tw-bg-opacity: 1;
-  background-color: rgba(96.492, 109.211, 122.808, var(--tw-bg-opacity));
+  background: #202c3b;
   padding: 0.5rem 0.5rem 0.25rem;
   display: inline-block;
   margin-right: 20px;
 `;
 
-function LinkButton({name = "Button", href = "#", logo="", target="_blank", style={}}) {
+const ExtraLinkText = styled.span`
+  animation: 500ms fadein;
+`;
+
+
+function LinkButton(
+    {
+        name = "Button",
+        href = "#",
+        logo="",
+        target="_blank",
+        style={},
+        stats = null,
+        data = null
+    }
+) {
+
+    let extraText = "";
+
+    // Chromegle Stats
+    if (stats === "chromegle" && data?.chromegle) {
+        extraText = <ExtraLinkText> ({data.chromegle} Online)</ExtraLinkText>
+    }
+
+    // TikTokLive Stats
+    if (stats === "tiktoklive" && data?.tiktoklive) {
+        extraText = <ExtraLinkText> ({data.tiktoklive} Stars)</ExtraLinkText>
+    }
+
     return (
         <ButtonItem className="no-select" href={href} title="Click to Warp" target={target} style={style}>
             <ButtonIcon><img alt="" width="25" height="25" src={logo}/></ButtonIcon>
-            <ButtonTitle>{name}</ButtonTitle>
+            <ButtonTitle>{name}{extraText}</ButtonTitle>
         </ButtonItem>
     )
 }

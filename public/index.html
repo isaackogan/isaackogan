@@ -8,9 +8,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Personal Site - Isaac Kogan"/>
-    <link id="icon" rel="icon" href="%PUBLIC_URL%/favicon.png" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/iciel-gotham" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap"/>
+    <link id="icon" rel="icon" href="favicon.png"/>
 
     <style>
       .noScript {
@@ -23,7 +23,6 @@
         display: flex;
         width: 99vw;
         max-width: 90%;
-        height: 99vh;
         align-items: center;
         align-content: center;
         justify-content: center;
@@ -48,12 +47,21 @@
         opacity: 0.8;
         transition: opacity 100ms;
       }
+
+      body, html, #root {
+          background: #617b8a;
+      }
+
+      #root {
+        background: #6684a1;
+        background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('/background.png');
+        background-position: 0 30%;
+      }
     </style>
 
   </head>
-  <body style="margin: 0; min-height: 100vh; background-color: rgb(51, 64.175, 76.5)">
+  <body style="margin: 0; ">
     <noscript><div class="noScript no-select"><span class="enableJS">You need to enable JavaScript to run this website.</span></div></noscript>
     <div id="root"></div>
-  <footer style="margin-top: 135px;"></footer>
   </body>
 </html>

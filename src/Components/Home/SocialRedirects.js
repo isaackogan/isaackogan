@@ -4,22 +4,33 @@ import styled from 'styled-components';
 import CopyButton from "./RedirectButtons/CopyButton";
 
 const ContainedRedirect = styled.div`
-  max-width: 1100px;
+  max-width: 900px;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-
-  margin-top: 50px;
-
   display: flex;
   flex-direction: column;
-  
+  color: #d0d0d0;
   font-family: Rubik, -apple-system, "Helvetica Neue", Roboto, system-ui, sans-serif;
-  
-  &:before {
-    font-size: 30px;
-    font-weight: bold;
-    content: '${props => props.title}';
+
+`;
+
+
+
+const ContainedTitle = styled.div`
+  font-size: 25px;
+  color: rgba(18, 27, 39, 0.95);
+  font-weight: 600;
+  transform: rotate(${props => props.rotate}deg);
+  margin-top: 15px;
+  margin-bottom: 10px;
+
+  padding-top: ${props => props.rotate > 0 ? 9 : 5}px;
+  padding-bottom: ${props => props.rotate > 0 ? 1 : 15}px;
+
+  @media (max-width: 750px) {
+    padding-top: ${props => props.rotate > 0 ? 4 : 8}px;
+    padding-bottom: ${props => props.rotate > 0 ? 4 : 10}px;
   }
 `;
 
@@ -41,11 +52,15 @@ class SocialRedirects extends Component {
     genButtons(buttons = []) {
         for (const link of this.props.links) {
 
+            if (link.disabled) {
+                continue;
+            }
+
             if (link.copy) {
                buttons.push(
                    <CopyButton
                        name={link.name}
-                       value={link.value}
+                       value={link.value.toUpperCase()}
                        logo={`/logos/${link.icon}`}
                        key={`copy-button-${link.name.toLowerCase()}`}
                    />
@@ -58,6 +73,8 @@ class SocialRedirects extends Component {
                         href={this.getButtonHref(link)}
                         logo={`/logos/${link.icon}`}
                         key={`redirect-button-${link.name.toLowerCase()}`}
+                        stats={link.stats}
+                        data={this.props.stats}
                     />
                 )
             }
@@ -68,7 +85,8 @@ class SocialRedirects extends Component {
     render() {
 
         return (
-            <ContainedRedirect title={this.props.title} className={`defaultGrey`}>
+            <ContainedRedirect className={`defaultGrey`}>
+                <ContainedTitle rotate={this.props.rotate}>{this.props.title}</ContainedTitle>
                 {this.genButtons()}
             </ContainedRedirect>
         )

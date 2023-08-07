@@ -7,10 +7,17 @@
       "copy": true
     },
     {
+      "name": "LinkedIn",
+      "path": "/linkedin",
+      "url": "https://www.linkedin.com/in/isaackogan/",
+      "icon": "linkedin.svg"
+    },
+    {
       "name": "Snapchat",
       "path": ["/snapchat", "/snap"],
       "url": "https://www.snapchat.com/add/isaackogan/",
-      "icon": "snapchat.svg"
+      "icon": "snapchat.svg",
+      "disabled": true
     },
     {
       "name": "GitHub",
@@ -23,26 +30,22 @@
       "path": "/instagram",
       "url": "https://instagram.com/isaackogan",
       "icon": "instagram.svg"
-    },
-    {
-      "name": "LinkedIn",
-      "path": "/linkedin",
-      "url": "https://www.linkedin.com/in/isaackogan/",
-      "icon": "linkedin.svg"
     }
   ],
   "project": [
     {
-      "name": "TikTokLive Python Library",
+      "name": "TikTokLive",
       "path": "tiktoklive",
       "url": "https://github.com/isaackogan/TikTokLive",
-      "icon": "tiktok.svg"
+      "icon": "tiktok.svg",
+      "stats": "tiktoklive"
     },
     {
-      "name": "Chromegle - Omegle Automation",
+      "name": "Chromegle",
       "path": ["chromegle", "omegle"],
       "url": "https://chrome.google.com/webstore/detail/chromegle-omegle-ip-pulle/gcbbaikjfjmidabapdnebofcmconhdbn/",
-      "icon": "chromegle.svg"
+      "icon": "chromegle.svg",
+      "stats": "chromegle"
     },
     {
       "name": "CA$50,000+ COVID-19 Fundraiser",
