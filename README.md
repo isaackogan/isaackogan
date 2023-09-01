@@ -13,9 +13,8 @@
 // Protobuf :(
 
 message IsaacKogan {
-  required int32 age = 18;
+  required int32 age = 19;
   required Schools schools = 4;
-  required Languages languages = 3;
 }
 
 message Schools {
