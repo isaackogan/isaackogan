@@ -1,6 +1,6 @@
 ## Hey, I'm Isaac Kogan! 👋
  
-- 🎓 Student at York University and programming hobbyist
+- 🎓 Student at York University and ~programming hobbyist~
 - ⏰ Working on TikTok via my [TikTokLive](https://github.com/isaackogan/TikTokLive/) library
 - 🌐 Managing my [Chromegle](https://github.com/ChromegleApp/Chromegle) Chrome App
 - 📫 Reach me at [info@isaackogan.com](mailto:info@isaackogan.com) for questions, concerns, and with dog photos
