@@ -3,6 +3,7 @@ import {Component} from "react";
 import SocialRedirects from "../Components/Home/SocialRedirects";
 import "../Resources/index.css";
 import styled from "styled-components";
+import Stars from "../Components/Particles";
 
 export const HomeContainer = styled.div`
   background-size: cover;
@@ -28,19 +29,27 @@ class Home extends Component {
 
         let newState = {}
 
-        // Chromegle
-        try {
-            let result = await (await fetch("https://geo.eulerstream.com/users")).json();
-            newState.chromegle = result?.["count"];
-        } catch (ex) {
-        }
-
         // TikTokLive
         try {
             let result = await (await fetch("https://api.github.com/repos/isaackogan/tiktoklive")).json();
             newState.tiktoklive = result?.["stargazers_count"];
+
         } catch (ex){
 
+        }
+
+        // Class Find Tool
+        try {
+            let result = await (await fetch("https://yorkapi.isaackogan.com/v1/main/cft/stats")).json();
+            newState.classfinder = result?.["navs"];
+        } catch (ex){
+        }
+
+        // Study Buddies
+        try {
+            let result = await (await fetch("https://study-api.yorku.dev/stats")).json();
+            newState.studybuddies = result?.["clickCount"];
+        } catch (ex) {
         }
 
         this.setState(newState);
@@ -66,9 +75,10 @@ class Home extends Component {
 
         return (
             <HomeContainer>
+                <Stars/>
                 <Header />
                 <HomeBackground>
-                    <SocialRedirects title={"Social Media"} rotate={-1} links={this.props.config['social']}/>
+                    <SocialRedirects title={"Socials"} rotate={-1} links={this.props.config['social']}/>
                     <SocialRedirects stats={this.state} title={"Projects"} rotate={1} links={this.props.config['project']}/>
                     <div style={{paddingBottom: "30px"}}></div>
                 </HomeBackground>

@@ -13,13 +13,17 @@ const ContainedRedirect = styled.div`
   color: #d0d0d0;
   font-family: Rubik, -apple-system, "Helvetica Neue", Roboto, system-ui, sans-serif;
 
+  @media(max-width: 600px) {
+    width: 90%;
+  }
+  
 `;
 
 
 
 const ContainedTitle = styled.div`
   font-size: 25px;
-  color: rgba(18, 27, 39, 0.95);
+  color: rgba(255, 255, 255, 0.95);
   font-weight: 600;
   transform: rotate(${props => props.rotate}deg);
   margin-top: 15px;
@@ -74,6 +78,7 @@ class SocialRedirects extends Component {
                         logo={`/logos/${link.icon}`}
                         key={`redirect-button-${link.name.toLowerCase()}`}
                         stats={link.stats}
+                        statsLabel={link.statsLabel}
                         data={this.props.stats}
                     />
                 )

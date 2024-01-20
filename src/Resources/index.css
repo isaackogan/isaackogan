@@ -2,6 +2,7 @@
 
 :root {
     --secondary: #121b27;
+    --tertiary: rgba(61, 75, 103, 0.48);
 }
 
 .no-select {

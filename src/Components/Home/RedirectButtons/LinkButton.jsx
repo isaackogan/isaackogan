@@ -24,6 +24,8 @@ export const ButtonItem = styled.a`
   &:active {
     opacity: 1;
   }
+  
+  
 
 `;
 
@@ -55,20 +57,16 @@ function LinkButton(
         target="_blank",
         style={},
         stats = null,
+        statsLabel = null,
         data = null
     }
 ) {
 
     let extraText = "";
 
-    // Chromegle Stats
-    if (stats === "chromegle" && data?.chromegle) {
-        extraText = <ExtraLinkText> ({data.chromegle} Online)</ExtraLinkText>
-    }
-
-    // TikTokLive Stats
-    if (stats === "tiktoklive" && data?.tiktoklive) {
-        extraText = <ExtraLinkText> ({data.tiktoklive} Stars)</ExtraLinkText>
+    // Load stats
+    if (stats && statsLabel && data) {
+        extraText = <ExtraLinkText> ({data[stats]?.toLocaleString()} {statsLabel})</ExtraLinkText>
     }
 
     return (

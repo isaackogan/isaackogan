@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import styled from 'styled-components';
 import Header from "../Components/Header";
 import {HomeBackground, HomeContainer} from "./Home";
+import Stars from "../Components/Particles";
 
 const RedirectItem = styled.span`
   background-color: var(--secondary);
@@ -28,8 +29,8 @@ const LoadRing = styled.div`
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 16px solid var(--secondary);
-    border-color: var(--secondary) transparent var(--secondary) transparent;
+    border: 16px solid var(--tertiary);
+    border-color: var(--tertiary) transparent var(--tertiary) transparent;
     animation: lds-dual-ring 1.2s linear infinite;
   }
   
@@ -64,7 +65,7 @@ class Redirect extends Component {
             "href", `/logos/${this.props.icon}`
         );
 
-        setTimeout(() => window.location.href = this.props.href, 1500);
+        setTimeout(() => window.location.href = this.props.href, 2500);
 
     }
 
@@ -75,6 +76,7 @@ class Redirect extends Component {
     render() {
         return (
             <HomeContainer style={{minHeight: "100vh"}}>
+                <Stars/>
                 <Header />
                 <HomeBackground style={{height: "100%"}}></HomeBackground>
                 <RedirectPageContainer>

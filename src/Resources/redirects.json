@@ -1,36 +1,31 @@
 {
   "social": [
     {
-      "name": "E-Mail",
+      "name": "Public E-Mail",
       "value": "info@isaackogan.com",
       "icon": "email.svg",
       "copy": true
-    },
-    {
-      "name": "LinkedIn",
-      "path": "/linkedin",
-      "url": "https://www.linkedin.com/in/isaackogan/",
-      "icon": "linkedin.svg"
     },
     {
       "name": "Snapchat",
       "path": ["/snapchat", "/snap"],
       "url": "https://www.snapchat.com/add/isaackogan/",
       "icon": "snapchat.svg",
-      "disabled": true
-    },
-    {
-      "name": "GitHub",
-      "path": "/github",
-      "url": "https://github.com/isaackogan",
-      "icon": "github.svg"
+      "disabled": false
     },
     {
       "name": "Instagram",
       "path": "/instagram",
       "url": "https://instagram.com/isaackogan",
       "icon": "instagram.svg"
+    },
+    {
+      "name": "GitHub",
+      "path": "/github",
+      "url": "https://github.com/isaackogan",
+      "icon": "github.svg"
     }
+
   ],
   "project": [
     {
@@ -38,20 +33,31 @@
       "path": "tiktoklive",
       "url": "https://github.com/isaackogan/TikTokLive",
       "icon": "tiktok.svg",
-      "stats": "tiktoklive"
+      "stats": "tiktoklive",
+      "statsLabel": "Stars"
     },
     {
-      "name": "Chromegle",
-      "path": ["chromegle", "omegle"],
-      "url": "https://chrome.google.com/webstore/detail/chromegle-omegle-ip-pulle/gcbbaikjfjmidabapdnebofcmconhdbn/",
-      "icon": "chromegle.svg",
-      "stats": "chromegle"
+      "name": "Study Buddies for YorkU",
+      "path": "studybuddies",
+      "url": "https://study.yorku.dev",
+      "icon": "books.svg",
+      "stats": "studybuddies",
+      "statsLabel": "Joins"
+    },
+    {
+      "name": "Class Find Tool for YorkU",
+      "path": "classfinder",
+      "url": "https://study.yorku.dev",
+      "icon": "map.svg",
+      "stats": "classfinder",
+      "statsLabel": "Searches"
     },
     {
       "name": "CA$50,000+ COVID-19 Fundraiser",
       "path": ["uja-drive", "ujadrive"],
       "url": "https://jewishtoronto.crowdchange.co/16607",
-      "icon": "covid.svg"
+      "icon": "covid.svg",
+      "disabled": true
     },
     {
       "name": "CA$1,500+ CA-Ukraine Fundraiser",
