@@ -1,13 +1,13 @@
-## Hey, I'm Isaac Kogan! 👋
- 
+## Hey, I'm Isaac! 👋
+
 - 🎓 Student at York University and ~programming hobbyist~ Programmer @ YorkU
-- ⏰ Working on TikTok scraping my [TikTokLive](https://github.com/isaackogan/TikTokLive/) library
+- ⏰ Working on scraping TikTok with my [TikTokLive](https://github.com/isaackogan/TikTokLive/) library
 - 📫 Reach me at [info@isaackogan.com](mailto:info@isaackogan.com) for questions, concerns, and with dog photos
-- ⚡ Connect with me on [LinkedIn](https://www.linkedin.com/in/isaackogan/). Note that I only accept connections to people I know
+- ⚡ Connect with me on [LinkedIn](https://www.linkedin.com/in/isaackogan/). 
 
 ```protobuf
 
-// Protobuf :(
+// Protobuf :)
 
 message IsaacKogan {
   required int32 age = 19;
@@ -27,7 +27,5 @@ message IsaacKogan {
     required int32 java = 4;
   }
 }
-
-
 
 ```
