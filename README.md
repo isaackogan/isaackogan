@@ -1,9 +1,8 @@
 ## Hey, I'm Isaac! 👋
 
-- 🎓 Student at York University and ~programming hobbyist~ Programmer @ YorkU
-- ⏰ Working on scraping TikTok with my [TikTokLive](https://github.com/isaackogan/TikTokLive/) library
-- 📫 Reach me at [info@isaackogan.com](mailto:info@isaackogan.com) for questions, concerns, and with dog photos
-- ⚡ Connect with me on [LinkedIn](https://www.linkedin.com/in/isaackogan/). 
+- Working on scraping libraries for every platform!
+- Reach me at [info@isaackogan.com](mailto:info@isaackogan.com) for questions, concerns, and with dog photos
+- Connect with me on [LinkedIn](https://www.linkedin.com/in/isaackogan/). 
 
 ```protobuf
 
