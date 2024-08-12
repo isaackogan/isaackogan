@@ -5,9 +5,6 @@
 - Connect with me on [LinkedIn](https://www.linkedin.com/in/isaackogan/). 
 
 ```protobuf
-
-// Protobuf :)
-
 message IsaacKogan {
   required int32 age = 19;
   required Schools schools = 3;
