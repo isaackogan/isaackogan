@@ -2,7 +2,7 @@
     <img src="https://www.eulerstream.com/api/advert?l2=WebSocket+API&r=15&b=2&bc=404854&o=0.95"/>
 </a>
 
-<br/><br/>
+## A little about me...
 
 ```protobuf
 message IsaacKogan {
