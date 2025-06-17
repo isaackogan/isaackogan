@@ -1,3 +1,5 @@
+## Euler Stream API
+
 <a href="https://www.eulerstream.com/websockets" target="_blank">
     <img src="https://www.eulerstream.com/api/advert?l2=WebSocket+API&r=15&b=2&bc=404854&o=0.95"/>
 </a>
