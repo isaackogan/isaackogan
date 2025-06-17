@@ -1,8 +1,8 @@
 ## Hey, I'm Isaac! 👋
 
-- Working on scraping libraries for every platform!
-- Reach me at [info@isaackogan.com](mailto:info@isaackogan.com) for questions, concerns, and with dog photos
-- Connect with me on [LinkedIn](https://www.linkedin.com/in/isaackogan/). 
+<a href="https://www.eulerstream.com/websockets" target="_blank">
+    <img src="https://www.eulerstream.com/api/advert?l2=WebSocket+API&r=15&b=1.5&bc=404854&o=0.95"/>
+</a>
 
 ```protobuf
 message IsaacKogan {
