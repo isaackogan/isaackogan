@@ -13,7 +13,7 @@ message IsaacKogan {
   required Languages languages = 4;
 
   message Schools {
-    required string university = 1; // York University, BSc (Class of 2026)
+    required string university = 1; // York University, BSc Biology (Class of 2026)
     required string highSchool = 2; // Westmount C.I. & King City S.S.
     required string middleSchool = 3; // Academy for Gifted Children - P.A.C.E.
   }
