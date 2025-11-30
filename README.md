@@ -8,17 +8,17 @@
 
 ```protobuf
 message IsaacKogan {
-  required int32 age = 20;
-  required Schools schools = 3;
-  required Languages languages = 4;
+  required int32 age = 21;
+  required Education schools = 3;
+  required LanguageProficiencies languages = 4;
 
-  message Schools {
+  message Education {
     required string university = 1; // York University, BSc Biology (Class of 2026)
     required string highSchool = 2; // Westmount C.I. & King City S.S.
     required string middleSchool = 3; // Academy for Gifted Children - P.A.C.E.
   }
 
-  message Languages {
+  message LanguageProficiencies {
     required int32 python = 1;
     required int32 typescript = 2;
     required int32 php = 3;
